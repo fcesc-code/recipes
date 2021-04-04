@@ -3,19 +3,19 @@
   "version": "0.0.1",
   "description": "Boilerplate for vanillaJS projects",
   "scripts": {
-    "dev": "parcel src/index.html -p 9200 --open",
+    "parcel:dev": "parcel src/index.html -p 9200 --open",
     "parcel:build": "parcel build src/index.html --public-url ./ --out-dir dist",
     "clean": "rimraf dist .cache",
+    "dev": "npm-run-all clean parcel:dev",
     "build": "npm-run-all clean parcel:build",
     "test": ""
   },
   "devDependencies": {
     "npm-run-all": "^4.1.5",
+    "parcel-bundler": "^1.12.5",
     "rimraf": "^3.0.2"
   },
-  "dependencies": {
-    "parcel-bundler": "^1.12.5"
-  },
+  "dependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fcesc-code/uoc-eines1-pac1.git"
