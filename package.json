@@ -1,0 +1,29 @@
+{
+  "name": "fcesc-boilerplate",
+  "version": "0.0.1",
+  "description": "Boilerplate for vanillaJS projects",
+  "scripts": {
+    "dev": "",
+    "build": "",
+    "test": ""
+  },
+  "devDependencies": {},
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fcesc-code/uoc-eines1-pac1.git"
+  },
+  "keywords": [
+    "Vanilla",
+    "JS",
+    "UOC"
+  ],
+  "author": {
+    "name": "Francesc Brugarolas"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fcesc-code/uoc-eines1-pac1/issues"
+  },
+  "homepage": "https://github.com/fcesc-code/uoc-eines1-pac1#readme"
+}
