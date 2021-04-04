@@ -2,12 +2,14 @@
   "name": "fcesc-boilerplate",
   "version": "0.0.1",
   "description": "Boilerplate for vanillaJS projects",
+  "main": "src/index.html",
   "scripts": {
     "parcel:dev": "parcel src/index.html -p 9200 --open",
     "parcel:build": "parcel build src/index.html --public-url ./ --out-dir dist",
     "clean": "rimraf dist .cache",
     "dev": "npm-run-all clean parcel:dev",
     "build": "npm-run-all clean parcel:build",
+    "lint": "./node_modules/.bin/eslint src --fix",
     "test": ""
   },
   "devDependencies": {
