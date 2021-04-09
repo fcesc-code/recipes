@@ -47,7 +47,7 @@ function parseValues(){
 
   function parseLiteral( htmlTextInput, mapOfValues ){
     const dynamicVariables = getValuesFromHtmlText(htmlTextInput);
-    return (dynamicVariables === null)
+    return (dynamicVariables === null || mapOfValues === null)
       ? htmlTextInput
       : substituteDynamicValues( htmlTextInput, dynamicVariables, mapOfValues );
   }
