@@ -1,7 +1,3 @@
-import axios from 'axios';
-// import { readFileSync } from 'fs';
-import path from 'path';
-
 const REGEX_TO_PARSE = /(?<=\{\{)[^{]*(?=\}\})/g;
 
 function parseValues(){
@@ -19,30 +15,7 @@ function parseValues(){
       const targetValue = mapOfValues.get(variable);
       modifiedHtmlText = modifiedHtmlText.replace(`{{${variable}}}`, targetValue);
     }
-    console.log('org:', htmlText, 'mod:', modifiedHtmlText)
     return modifiedHtmlText
-  }
-
-  function parseTemplate( filePath, mapOfValues ){
-    const safePath = path.join(__dirname, filePath);
-    return axios(safePath)
-      .then(response => response.text())
-      .then(htmlText => {
-        console.warn('OBTAINED FILE CONTENT', htmlText);
-        return parseLiteral( htmlText, mapOfValues)
-      })
-      .catch(error => {
-        console.error(`Error while accessing template file ${path} with error:\n${error}`);
-        return '';
-      })
-    // try{
-    //   const safePath = path.join(__dirname, filePath);
-    //   const textData = readFileSync(safePath, 'utf8');
-    //   return parseLiteral( textData, mapOfValues );
-    // } catch (error) {
-    //   console.error(`Error while accessing template file ${path} with error:\n${error}`);
-    //   return '';
-    // }
   }
 
   function parseLiteral( htmlTextInput, mapOfValues ){
@@ -52,7 +25,7 @@ function parseValues(){
       : substituteDynamicValues( htmlTextInput, dynamicVariables, mapOfValues );
   }
 
-  return { parseTemplate, parseLiteral }
+  return { parseLiteral }
 }
 
 const PARSER = parseValues();

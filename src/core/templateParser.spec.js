@@ -1,6 +1,6 @@
 import templateParser from './templateParser';
 
-xdescribe('SUITE template.parseLiteral tests', () => {
+describe('SUITE template.parseLiteral tests', () => {
 
   it('Should detect a double curled expression and substitute the variable for a value', () => {
     const sampleVariables = [ 'cool', 'there' ];
@@ -62,31 +62,5 @@ xdescribe('SUITE template.parseLiteral tests', () => {
 
     expect(actual).toBe(expected);
   })
-})
-
-describe('SUITE template.parseTemplate (from File) tests', () => {
-
-  test('Should load the content of a file and substitute the variables using .parseLiteral', async () => {
-    const sampleValues = [ 'really cool stuff', 'somewhere else' ];
-    const testValuesMap = new Map();
-    testValuesMap.set('cool', sampleValues[0]);
-    testValuesMap.set('there', sampleValues[1]);
-    const path = './templateParser.spec.html';
-
-    const expected = `<!--This html is for test purposes-->
-      <h1>Some template stuff</h1>
-      <p class="someParagraph">Here is some text with some ${sampleValues[0]}.</p>
-      <p class="someParagraph">${sampleValues[1]} is some other text.</p>
-      <ul>
-        <li>None of the following items should be substituted</li>
-        <li>Item {{none}the}less</li>
-        <li>Item {{unclosed</li>
-        <li>Item }crazy}</li>
-      </ul>`;
-
-    const actual = await templateParser.parseTemplate(path, testValuesMap);
-
-    expect(actual.replace(/\n/g,'')).toEqual(expected.replace(/\n/g,''));
-  })
-
+  
 })
