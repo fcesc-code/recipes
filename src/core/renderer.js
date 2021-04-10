@@ -1,4 +1,6 @@
 import PARSER from './templateParser';
+import 'regenerator-runtime/runtime';
+import path from 'path';
 
 function renderComponent( htmlTextInput ){
   function findNode (query){
@@ -6,7 +8,7 @@ function renderComponent( htmlTextInput ){
   }
 
   function append({ parent, styles, data }){
-    addStyles(styles);
+    if (styles) addStyles(styles);
     addDOMElements({ parent, data });
   }
 
@@ -15,14 +17,14 @@ function renderComponent( htmlTextInput ){
     findNode(parent).appendChild(node);
   }
 
-  function addStyles (styles) {
-    // const cssLoad = `<link rel="stylesheet" type="text/css" href="${styles}"/>`;
-    // const parsed = new DOMParser().parseFromString(cssLoad, "text/html")
-    // const style = parsed.head.firstChild;
-    // findNode(`head`).appendChild(style);
+  async function addStyles (stylesPath) {
+    const safePath = path.join(__dirname, stylesPath);
+    const loadedStyles = await fetch(safePath).then(response => response.text());
+    console.warn(loadedStyles);
     const link = document.createElement('link');
-      link.href = styles;
       link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = '';
     findNode('head').appendChild(link);
   }
 

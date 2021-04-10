@@ -5,7 +5,7 @@ function footerComponent(){
     <p>Francesc Brugarolas - <a href='http://uoc.edu'>UOC</a> - Eines HTML i CSS I - PAC1 - Abril 2021</p>
   `)({
     parent: 'footer',
-    styles: 'footer.css',
+    styles: null,
     data: {
       someContent: 'This is fun!'
     }

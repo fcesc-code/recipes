@@ -1,0 +1,40 @@
+$wearables: 359px
+$phones: 767px
+$tablets: 1023px
+$noHD: 1535px
+$SHD: 2559px
+$QHD: 3839px
+$HD4K: 7679px
+
+$maxBodyWidth: 3150px
+
+@mixin wearables
+  @media (max-device-width: #{$wearables})
+    @content
+
+@mixin phones
+  @media (min-device-width: #{$wearables + 1px}) and (max-device-width: #{$phones})
+    @content
+
+@mixin tablets
+  @media (min-device-width: #{$phones + 1px}) and (max-device-width: #{$tablets})
+    @content
+
+@mixin noHD
+  @media (min-device-width: #{$tablets + 1px}) and (max-device-width: #{$noHD})
+    @content
+
+@mixin SHD
+  @media (min-device-width: #{$noHD + 1px}) and (max-device-width: #{$SHD})
+    @content
+
+@mixin QHD
+  @media (min-device-width: #{$SHD + 1px}) and (max-device-width: #{$QHD})
+    @content
+
+@mixin HD4K
+  @media (min-device-width: #{$HD4K + 1px})
+    @content
+
+@mixin fallback
+    @content

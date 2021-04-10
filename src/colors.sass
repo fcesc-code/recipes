@@ -1,0 +1,28 @@
+$c_txt_highlighted: #ff5e5b
+$c_txt_title: #2b061e
+$c_txt_subtitle: #875053
+$c_txt_main: #1f1f1f
+$c_txt_darkbluish: #04151f
+$c_txt_lightbluish: #d0c2e4
+$c_txt_secondary: #a2a392
+$c_txt_white: #fdfdff
+
+$c_bg_ivory: #ffffea
+$c_bg_charcoal: #2a3d45
+$c_bg_lightgray: #d8d8d8
+$c_bg_pinetree: #1f271b
+
+$c_redflag: #ff1020
+$c_amberflag: #fcb800
+$c_greenflag: #05f140
+
+$c_siena: #3c1518
+$c_corn: #f5f539
+$c_blue: #13c7d8
+$c_pastel: #f3a578
+
+$colors_background_map: ('bg_ivory': $c_bg_ivory, 'bg_charcoal': $c_bg_charcoal, 'bg_lightgray': $c_bg_lightgray, 'bg_pinetree': $c_bg_pinetree)
+
+@each $colorName, $hex in $colors_background_map
+  .#{$colorName}_bg
+    background-color: $hex
