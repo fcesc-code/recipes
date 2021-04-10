@@ -1,1 +1,0 @@
-{"version":3,"sources":["index.js"],"names":["console","warn"],"mappings":";AAAAA,QAAQC,KAAK,mCACbD,QAAQC,KAAK","file":"src.508a1117.js","sourceRoot":"..\\src","sourcesContent":["console.warn('Hello, world! Parcel is running');\r\nconsole.warn('Yes, running');"]}
