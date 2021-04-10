@@ -62,5 +62,32 @@ describe('SUITE template.parseLiteral tests', () => {
 
     expect(actual).toBe(expected);
   })
-  
+
+  it('Should detect special object data as input', () => {
+    const sampleSpecialDataObj = 'list';
+    const sampleHtml = `<ul>{{%%${sampleSpecialDataObj}%%}}<ul>`;
+    const sampleTemplate = `<li>{{title}}: {{description}}</li>`;
+    const sampleList = [ 
+      { title: 'One', description: 'Interesting stuff' },
+      { title: 'Two', description: 'Can be rendered' },
+      { title: 'Three', description: 'In a list' }
+    ];
+    const testValuesMap = new Map();
+    testValuesMap.set(`${sampleSpecialDataObj}`, { 
+      list: sampleList,
+      itemTemplate: sampleTemplate
+    });
+    let expectedItemsListWithValues = '';
+    for (let item of sampleList){
+      expectedItemsListWithValues = expectedItemsListWithValues + `<li>${item.title}: ${item.description}</li>`;
+    } 
+
+    const expected = `<ul>${expectedItemsListWithValues}<ul>`;
+    
+    const actual = templateParser.parseLiteral(sampleHtml, testValuesMap);
+    console.log('actual', actual);
+
+    expect(actual).toBe(expected);
+  })
+
 })
