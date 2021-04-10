@@ -34,8 +34,7 @@
     "sass": "^1.32.8"
   },
   "dependencies": {
-    "axios": "^0.21.1",
-    "views": "^1.0.2"
+    "axios": "^0.21.1"
   },
   "babel": {
     "presets": [
