@@ -1,7 +1,5 @@
 import renderComponent from '../core/renderer';
-import rawdata from '../mockdata/recipiesList.json';
-
-const MOCKDATA = JSON.parse(rawdata);
+import MOCKDATA from '../mockdata/recipiesList';
 
 const neatList = MOCKDATA.map(recipy => { return { 
   'title': recipy.name, 

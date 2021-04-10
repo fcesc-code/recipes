@@ -73,7 +73,7 @@ describe('SUITE template.parseLiteral tests', () => {
       { title: 'Three', description: 'In a list' }
     ];
     const testValuesMap = new Map();
-    testValuesMap.set(`%%${sampleSpecialDataObj}%%`, { 
+    testValuesMap.set(`${sampleSpecialDataObj}`, { 
       list: sampleList,
       itemTemplate: sampleTemplate
     });

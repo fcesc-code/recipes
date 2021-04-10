@@ -1,4 +1,4 @@
-const REGEX_TO_PARSE = /(?<=\{\{)[^{]*(?=\}\})/g;
+const REGEX_TO_PARSE = /(?<=\{\{)[^{}]*(?=\}\})/g;
 
 function parseValues(){
   function getValuesFromHtmlText(htmlText){
@@ -10,11 +10,12 @@ function parseValues(){
 
   function substituteDynamicValues( htmlText, variables, mapOfValues ){
     // eslint-disable-next-line no-restricted-syntax
+    console.warn('here again html', htmlText, 'variables', variables, 'mapOfValues', mapOfValues)
     let modifiedHtmlText = htmlText;
     const specialVariablesPattern = /(?<=%%)[^%\s]*(?=%%)/;
     for (const variable of variables){
       if(specialVariablesPattern.test(variable)){
-        const target = mapOfValues.get(variable);
+        const target = mapOfValues.get(variable.replace(/%/g, ''));
         const list = target.list;
         const template = target.itemTemplate;
         const itemProperties = getValuesFromHtmlText(template);
