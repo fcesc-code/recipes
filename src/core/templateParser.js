@@ -9,12 +9,13 @@ function parseValues(){
   }
 
   function substituteDynamicValues( htmlText, variables, mapOfValues ){
-    // eslint-disable-next-line no-restricted-syntax
-    console.warn('here again html', htmlText, 'variables', variables, 'mapOfValues', mapOfValues)
     let modifiedHtmlText = htmlText;
     const specialVariablesPattern = /(?<=%%)[^%\s]*(?=%%)/;
+
     for (const variable of variables){
+
       if(specialVariablesPattern.test(variable)){
+        
         const target = mapOfValues.get(variable.replace(/%/g, ''));
         const list = target.list;
         const template = target.itemTemplate;
@@ -23,13 +24,17 @@ function parseValues(){
         let resultList = '';
         for (let item of list){
           let mutableTemplate = template;
+
           for (let itemProp of itemProperties){
             const itemTargetValue = item[itemProp];
             mutableTemplate = mutableTemplate.replace(`{{${itemProp}}}`, itemTargetValue)
           }
+
           resultList = `${resultList}${mutableTemplate}`;
         }
+
         modifiedHtmlText = modifiedHtmlText.replace(`{{${variable}}}`, resultList);
+
       } else {
         const targetValue = mapOfValues.get(variable);
         modifiedHtmlText = modifiedHtmlText.replace(`{{${variable}}}`, targetValue);
