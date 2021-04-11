@@ -61,3 +61,29 @@ h1, h2
 
 h3, h4
   color: $c_txt_subtitle
+
+.recipies
+  display: flex
+  flex-direction: column
+  align-content: flex-start
+  justify-content: center
+  & li
+    list-style: none
+    display: flex
+    flex-direction: column
+    align-content: flex-start
+    justify-content: stretch
+    & img
+      object-fit: cover
+      object-position: center
+      max-height: 15rem
+
+nav
+  & ul
+    display: flex
+    flex-direction: row
+    flex-align: center
+    justify-content: space-between
+    & li
+      display: inline
+      list-style: none

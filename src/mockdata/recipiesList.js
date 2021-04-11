@@ -1,6 +1,8 @@
 export default [
   {
       "name": "Crock Pot Roast",
+      "category": "Roasts",
+      "country": "United Kingdom",
       "ingredients": [
           {
               "quantity": "1",
@@ -45,6 +47,8 @@ export default [
   },
   {
       "name": "Roasted Asparagus",
+      "category": "Vegetables",
+      "country": "Spain",
       "ingredients": [
           {
               "quantity": "1 lb",
@@ -91,6 +95,8 @@ export default [
   },
   {
       "name": "Curried Lentils and Rice",
+      "category": "Meat Pies",
+      "country": "Canada",
       "ingredients": [
           {
               "quantity": "1 quart",
@@ -132,10 +138,13 @@ export default [
           20,
           0
       ],
-      "imageURL": "http://dagzhsfg97k4.cloudfront.net/wp-content/uploads/2012/05/lentils3.jpg"
+      "imageURL": "https://minimalistbaker.com/wp-content/uploads/2017/09/AMAZING-Coconut-Curried-Golden-Lentils-20-minutes-healthy-SO-satisfying-vegan-lentil-curry-plantbased-coconut-dairyfree-glutenfree-12.jpg",
+      "originalURL": "https://minimalistbaker.com/coconut-curried-golden-lentils-20-minutes/"
   },
   {
       "name": "Big Night Pizza",
+      "category": "Pizza",
+      "country": "Italy",
       "ingredients": [
           {
               "quantity": "5 teaspoons",
@@ -196,10 +205,13 @@ export default [
           15,
           0
       ],
-      "imageURL": "http://upload.wikimedia.org/wikipedia/commons/c/c7/Spinach_pizza.jpg"
+      "imageURL": "http://upload.wikimedia.org/wikipedia/commons/c/c7/Spinach_pizza.jpg",
+      "originalURL": "https://tasty.co/recipe/pizza-dough"
   },
   {
       "name": "Cranberry and Apple Stuffed Acorn Squash Recipe",
+      "category": "Desserts",
+      "country": "United States of America",
       "ingredients": [
           {
               "quantity": "2",
@@ -253,10 +265,12 @@ export default [
           0
       ],
       "imageURL": "http://elanaspantry.com/wp-content/uploads/2008/10/acorn_squash_with_cranberry.jpg",
-      "originalURL": ""
+      "originalURL": "https://glutensugardairyfree.com/recipe-items/cranberry-apple-stuffed-acorn-squash/"
   },
   {
       "name": "Mic's Yorkshire Puds",
+      "category": "Desserts",
+      "country": "United Kingdom",
       "ingredients": [
           {
               "quantity": "200g",
@@ -306,6 +320,8 @@ export default [
   },
   {
       "name": "Old-Fashioned Oatmeal Cookies",
+      "category": "Desserts",
+      "country": "United Kingdom",
       "ingredients": [
           {
               "quantity": "1 cup",
@@ -392,11 +408,13 @@ export default [
           8,
           0
       ],
-      "imageURL": "http://s3.amazonaws.com/gmi-digital-library/65caecf7-a8f7-4a09-8513-2659cf92871e.jpg",
-      "originalURL": "#"
+      "imageURL": "https://images.pexels.com/photos/2377477/pexels-photo-2377477.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "originalURL": "https://www.cookingclassy.com/oatmeal-cookies/"
   },
   {
       "name": "Blueberry Oatmeal Squares",
+      "category": "Desserts",
+      "country": "United States",
       "ingredients": [
           {
               "quantity": "2-1/2 cups",
@@ -469,11 +487,13 @@ export default [
           0,
           0
       ],
-      "imageURL": "http://www.canadianliving.com/img/photos/biz/blueberry-oatmeal-squares5801359401371.jpg",
+      "imageURL": "https://m1.quebecormedia.com/emp/cl_prod/canadian_living-_-ec57f7d6-e56e-4b5e-9a51-fb1300b3e421-_-blueberry-oatmeal-squares2501359401339.jpg?impolicy=resize&width=1500&height=1500",
       "originalURL": "http://www.canadianliving.com/food/blueberry_oatmeal_squares.php"
   },
   {
       "name": "Curried chicken salad",
+      "category": "Salads",
+      "country": "France",
       "ingredients": [
           {
               "quantity": "3",
