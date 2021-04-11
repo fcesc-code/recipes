@@ -6,7 +6,7 @@ $SHD: 2559px
 $QHD: 3839px
 $HD4K: 7679px
 
-$maxBodyWidth: 3150px
+$maxBodyWidth: 3500px
 
 @mixin wearables
   @media (max-device-width: #{$wearables})
@@ -33,8 +33,24 @@ $maxBodyWidth: 3150px
     @content
 
 @mixin HD4K
-  @media (min-device-width: #{$HD4K + 1px})
+  @media (min-device-width: #{$QHD + 1px})
     @content
 
 @mixin fallback
+  @content
+
+@mixin wearablesAndPhones
+  @media (max-device-width: #{$wearables})
+    @content
+
+@mixin allMobile
+  @media (max-device-width: #{$tablets})
+    @content
+
+@mixin mostPc
+  @media (min-device-width: #{$tablets + 1px}) and (max-device-width: #{$SHD})
+    @content
+
+@mixin hugeDevices
+  @media (min-device-width: #{$SHD + 1px})
     @content
