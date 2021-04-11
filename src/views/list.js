@@ -7,11 +7,11 @@ const neatList = MOCKDATA.map(recipy => { return {
   'url': recipy.originalURL
   }
 });
-const itemTemplate = `<li><a href="{{img}}">{{title}}</a></li>`;
+const itemTemplate = `<li><img src="{{img}}"><a href="{{url}}">{{title}}</a></li>`;
 
 function listComponent(){
   renderComponent(`
-    <ul>
+    <ul class="recipies">
       {{%%list%%}}
     </ul>
   `)({
