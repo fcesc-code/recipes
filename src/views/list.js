@@ -1,12 +1,14 @@
 import renderComponent from '../core/renderer';
-import MOCKDATA from '../mockdata/recipiesList';
+import SERVICE from '../services/service';
 
-const neatList = MOCKDATA.map(recipy => { return { 
+const DATA = SERVICE.getAll();
+
+const neatList = DATA.map(recipy => ({ 
   'title': recipy.name, 
   'img': recipy.imageURL,
   'url': recipy.originalURL
-  }
-});
+  })
+);
 const itemTemplate = `<li><img src="{{img}}"><a href="{{url}}">{{title}}</a></li>`;
 
 function listComponent(){

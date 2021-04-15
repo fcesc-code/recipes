@@ -30,6 +30,7 @@
     "parcel-bundler": "^1.12.5",
     "postcss": "^8.2.9",
     "prettier": "^2.2.1",
+    "regenerator-runtime": "^0.13.7",
     "rimraf": "^3.0.2",
     "sass": "^1.32.8"
   },
