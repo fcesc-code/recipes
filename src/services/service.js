@@ -19,7 +19,19 @@ function service(){
     return DATA.filter( element => element.country === country );
   }
 
-  return { getAll, getRecipeById, getRecipyByCategory, getRecipeByCountry }
+  function getCategories(){
+    const list = new Set();
+    DATA.forEach( element => list.add(element.category) );
+    return [ ...list ];
+  }
+
+  function getCountry(){
+    const list = new Set();
+    DATA.forEach( element => list.add(element.country) );
+    return [ ...list ];
+  }
+
+  return { getAll, getRecipeById, getRecipyByCategory, getRecipeByCountry, getCategories, getCountry }
 }
 
 const SERVICE = service();
