@@ -1,13 +1,13 @@
-import renderComponent from '../core/renderer';
+import renderComponent from '../core/renderComponent';
 import APPURLS from '../routes/appUrls';
 import SERVICE from '../services/service';
 
-const data = SERVICE.getCategories();
-const categoriesList = data.map( item => ({ 'category': item, 'url': `/${item.replace(/\s/g,'_')}` }) );
+const categories = SERVICE.getCategories();
+const categoriesList = categories.map( item => ({ 'category': item, 'url': `/${item.replace(/\s/g,'_')}` }) );
 const categoryTemplate = `<li><a href="{{url}}">{{category}}</a></li>`;
 
-const urlList = APPURLS;
-const navTemplate = `<li><a href="{{url}}">{{title}}</a></li>`;
+const urlList = APPURLS.filter( url => url.display === true ).map( route => ({ 'title': route.title, 'url': route.path, 'body': route.body }) );
+const navTemplate = `<li><a href="{{url}}" onClick="renderApp({{body}})">{{title}}</a></li>`;
 
 function headerComponent(){
   renderComponent(`

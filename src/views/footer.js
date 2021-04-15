@@ -1,4 +1,4 @@
-import renderComponent from '../core/renderer';
+import renderComponent from '../core/renderComponent';
 
 function footerComponent(){
   renderComponent(`

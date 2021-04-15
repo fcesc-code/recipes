@@ -1,9 +1,7 @@
 import renderComponent from '../core/renderComponent';
-import SERVICE from '../services/service';
+import MOCKDATA from '../mockdata/recipiesList';
 
-const DATA = SERVICE.getAll();
-
-const neatList = DATA.map(recipy => ({ 
+const neatList = MOCKDATA.map(recipy => ({ 
   'title': recipy.name, 
   'img': recipy.imageURL,
   'url': recipy.originalURL
@@ -17,7 +15,7 @@ function listComponent(){
       {{%%list%%}}
     </ul>
   `)({
-    parent: '#content',
+    parent: '#list',
     styles: null,
     data: {
       list: {
