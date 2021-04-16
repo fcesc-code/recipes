@@ -873,27 +873,32 @@ var ROUTES = [{
   title: 'home',
   path: '/',
   display: false,
-  body: _list.default
+  body: _list.default,
+  page: ''
 }, {
   title: 'recipies\' mosaic',
   path: '/',
   display: true,
-  body: _list.default
+  body: _list.default,
+  page: ''
 }, {
   title: 'categories',
   path: '/categories/',
   display: true,
-  body: _list.default
+  body: _list.default,
+  page: ''
 }, {
   title: 'surprise me!',
   path: '/recipies/',
   display: true,
-  body: _surprise.default
+  body: _surprise.default,
+  page: ''
 }, {
   title: 'about & credits',
   path: '/about/',
   display: true,
-  body: _about.default
+  body: _about.default,
+  page: ''
 }];
 var _default = ROUTES;
 exports.default = _default;
@@ -933,7 +938,7 @@ var urlList = _appUrls.default.filter(function (url) {
   };
 });
 
-var navTemplate = "<li><a href=\"{{url}}\" onClick=\"renderApp({{body}})\">{{title}}</a></li>";
+var navTemplate = "<li><a href=\"{{url}}\">{{title}}</a></li>";
 
 function headerComponent() {
   (0, _renderComponent.default)("\n    <h1 class=\"mainTitle\">RECEPTES</h1>\n    <p>{{emblem}}</p>\n    <nav><ul class=\"navMenu\">{{%%navMenu%%}}</ul></nav>\n    <ul class=\"categoriesMenu\">{{%%categories%%}}</ul>\n  ")({
@@ -992,7 +997,6 @@ var _appUrls = _interopRequireDefault(require("./routes/appUrls"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// import renderApp from './core/renderApp';
 function renderBody(newBody) {
   console.warn('Triggered RenderBody with', newBody.name);
   return newBody();
@@ -1051,7 +1055,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52735" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49347" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
