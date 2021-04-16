@@ -1,7 +1,6 @@
 import headerComponent from './views/header';
 import footerComponent from './views/footer';
 import listComponent from './views/list';
-// import renderApp from './core/renderApp';
 import APPROUTES from './routes/appUrls';
 
 function renderBody( newBody ){
