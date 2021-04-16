@@ -23,10 +23,18 @@ function renderComponent( htmlTextInput ){
 
     return node;
   }
+
+  function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+  }
   
   function addDOMElements ( { parent, data } ){
     const node = bindDataToNode(data);
-    findNode(parent).appendChild(node);
+    const parentEl = findNode(parent);
+    if(parentEl.hasChildNodes()){ removeAllChildNodes( parentEl ) }
+    parentEl.appendChild(node);
   }
   
   async function addStyles (stylesPath) {

@@ -263,11 +263,23 @@ function renderComponent(htmlTextInput) {
     return node;
   }
 
+  function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+      parent.removeChild(parent.firstChild);
+    }
+  }
+
   function addDOMElements(_ref) {
     var parent = _ref.parent,
         data = _ref.data;
     var node = bindDataToNode(data);
-    findNode(parent).appendChild(node);
+    var parentEl = findNode(parent);
+
+    if (parentEl.hasChildNodes()) {
+      removeAllChildNodes(parentEl);
+    }
+
+    parentEl.appendChild(node);
   }
 
   function addStyles(_x) {
@@ -967,24 +979,7 @@ function footerComponent() {
 
 var _default = footerComponent;
 exports.default = _default;
-},{"../core/renderComponent":"core/renderComponent.js"}],"core/renderApp.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-function renderApp(newBody) {
-  console.warn('Triggered RenderApp');
-  var content = document.querySelector('#content');
-  content.innerHTML = '';
-  return newBody();
-}
-
-var _default = renderApp;
-exports.default = _default;
-},{}],"index.js":[function(require,module,exports) {
+},{"../core/renderComponent":"core/renderComponent.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _header = _interopRequireDefault(require("./views/header"));
@@ -993,20 +988,25 @@ var _footer = _interopRequireDefault(require("./views/footer"));
 
 var _list = _interopRequireDefault(require("./views/list"));
 
-var _renderApp = _interopRequireDefault(require("./core/renderApp"));
-
 var _appUrls = _interopRequireDefault(require("./routes/appUrls"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// import renderApp from './core/renderApp';
+function renderBody(newBody) {
+  console.warn('Triggered RenderBody with', newBody.name);
+  return newBody();
+}
+
 function init() {
   (0, _header.default)();
   (0, _footer.default)();
-  (0, _renderApp.default)(_list.default);
+  renderBody(_list.default);
 }
 
 init();
-window.onpopstate(function (event) {
+window.addEventListener('onpopstate', function (event) {
+  consolw.error('TRIGGERED ONPOPSTATE');
   console.warn(event.state);
   console.warn('entering popstate!!!');
   var currentPath = window.location.pathname;
@@ -1020,24 +1020,10 @@ window.onpopstate(function (event) {
     return element.path === pathname;
   });
 
-  (0, _renderApp.default)(target.body);
-}); // window.onpopstate = () => {
-//   const ROOT = document.querySelector('#content');
-//   // ROOT.innerHTML = routes[window.location.pathname]
-//   ROOT.innerHTML = ''
-//   console.log('here here', window.location.pathname);
-// }
-// function onNavigate(){
-//   const currentPath = window.location.pathname;
-//   const regEx = /\/(?=[^/]+$).+/g;
-//   const pathname = currentPath.match(regEx)[0];
-//   window.history.pushState(
-//     {},
-//     pathname,
-//     window.location.origin + pathname
-//   )
-// }
-},{"./views/header":"views/header.js","./views/footer":"views/footer.js","./views/list":"views/list.js","./core/renderApp":"core/renderApp.js","./routes/appUrls":"routes/appUrls.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+  console.warn('this is what we got from target', target);
+  renderBody(target.body);
+});
+},{"./views/header":"views/header.js","./views/footer":"views/footer.js","./views/list":"views/list.js","./routes/appUrls":"routes/appUrls.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -1065,7 +1051,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57389" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52735" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
