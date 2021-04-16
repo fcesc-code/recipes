@@ -11,6 +11,8 @@ A Git repository can be found at https://github.com/fcesc-code/uoc-eines1-pac1.g
 ## Tech stack
 - [Parcel](https://parceljs.org) bundler
 - [Babel](https://babeljs.io/) to transpile javascript to ES5 in production builds
+- [Express](https://expressjs.com) as development server
+- [nodemon](https://www.npmjs.com/package/nodemon) to watch for file chantes in development environment
 - [Jest](https://jestjs.io/)
 - [sass](https://sass-lang.com/)
 - [github](https://github.com/)
