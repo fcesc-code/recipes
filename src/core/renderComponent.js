@@ -1,6 +1,4 @@
-// import path from 'path';
 import PARSER from './templateParser';
-// import 'regenerator-runtime/runtime';
 
 function renderComponent( htmlTextInput ){
   function findNode (query){
@@ -38,13 +36,10 @@ function renderComponent( htmlTextInput ){
   }
   
   async function addStyles (stylesPath) {
-    // const safePath = path.join(__dirname, stylesPath);
-    // const loadedStyles = await fetch(safePath).then(response => response.text());
-    console.warn(stylesPath);
     const link = document.createElement('link');
       link.rel = 'stylesheet';
       link.type = 'text/css';
-      link.href = '';
+      link.href = stylesPath;
     findNode('head').appendChild(link);
   }
 
