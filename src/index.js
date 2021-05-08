@@ -4,6 +4,7 @@ import listComponent from './views/list';
 import APPROUTES from './routes/appUrls';
 
 function renderBody( newBody ){
+  console.warn('Triggered RenderBody with', newBody.name);
   return newBody();
 }
 
