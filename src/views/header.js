@@ -17,7 +17,7 @@ function headerComponent(){
     <ul class="categoriesMenu">{{%%categories%%}}</ul>
   `)({
     parent: 'header',
-    styles: null,
+    styles: '',
     data: {
       emblem: 'Quick, romantic, healthy or delicious cooking? Find recipies for all your needs.',
       categories: {
