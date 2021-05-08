@@ -2,8 +2,9 @@ import path from 'path';
 import cors from 'cors';
 import Bundler from 'parcel-bundler';
 import express from 'express';
+import debug from 'debug';
 
-import ROUTES from './routes/appUrls';
+import SERVICE from './services/service';
 
 const PORT = process.env.PORT || 3010;
 const server = express();
@@ -32,9 +33,21 @@ server.get('/', (req, res) => {
 })
 
 server.get('/about', (req, res) => {
-  res.sendFile(path.resolve(__dirname, './views/about.html'));
+  console.log('ENTERED ABOUT')
+  res.sendFile('./views/about.html');
+})
+
+server.get('/:recipeId', (req, res) => {
+  console.log('ENTERED STUFF');
+  const query = req.params.recipeId;
+  console.log('query', query);
+  const data = SERVICE.getRecipeById(query);
+  console.log('data', data);
+  res.status(200);
+  res.json(data);
+  console.log('res', res);
 })
 
 server.listen(PORT, () => {
-  console.log(`Server running in port:${PORT}...`);
+  debug(`Server running in port: ${PORT}...`);
 })

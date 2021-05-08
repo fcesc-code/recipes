@@ -240,7 +240,6 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-// import 'regenerator-runtime/runtime';
 function renderComponent(htmlTextInput) {
   function findNode(query) {
     return document.querySelector(query);
@@ -293,16 +292,13 @@ function renderComponent(htmlTextInput) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              // const safePath = path.join(__dirname, stylesPath);
-              // const loadedStyles = await fetch(safePath).then(response => response.text());
-              console.warn(stylesPath);
               link = document.createElement('link');
               link.rel = 'stylesheet';
               link.type = 'text/css';
-              link.href = '';
+              link.href = stylesPath;
               findNode('head').appendChild(link);
 
-            case 6:
+            case 5:
             case "end":
               return _context.stop();
           }
@@ -943,7 +939,7 @@ var navTemplate = "<li><a href=\"{{url}}\">{{title}}</a></li>";
 function headerComponent() {
   (0, _renderComponent.default)("\n    <h1 class=\"mainTitle\">RECEPTES</h1>\n    <p>{{emblem}}</p>\n    <nav><ul class=\"navMenu\">{{%%navMenu%%}}</ul></nav>\n    <ul class=\"categoriesMenu\">{{%%categories%%}}</ul>\n  ")({
     parent: 'header',
-    styles: null,
+    styles: '',
     data: {
       emblem: 'Quick, romantic, healthy or delicious cooking? Find recipies for all your needs.',
       categories: {
@@ -998,7 +994,6 @@ var _appUrls = _interopRequireDefault(require("./routes/appUrls"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function renderBody(newBody) {
-  console.warn('Triggered RenderBody with', newBody.name);
   return newBody();
 }
 
@@ -1010,7 +1005,7 @@ function init() {
 
 init();
 window.addEventListener('onpopstate', function (event) {
-  consolw.error('TRIGGERED ONPOPSTATE');
+  console.error('TRIGGERED ONPOPSTATE');
   console.warn(event.state);
   console.warn('entering popstate!!!');
   var currentPath = window.location.pathname;
@@ -1055,7 +1050,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49347" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58110" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
