@@ -1,38 +1,36 @@
-import express from 'express';
-import SERVICE from '../services/service';
+// eslint-disable-next-line
+import regeneratorRunTime from 'regenerator-runtime';
+import ROUTES from './appUrls';
+// import SERVICE from '../services/service';
 
-function router(){
-  const recipeRoutes = express.Router();
+const pathToRegex = path => new RegExp(`^${path.replace(/\//g, "\\/").replace(/:\w+/g, "(.+)")}$`);
 
-  recipeRoutes
-    .route('/byCountry/:country')
-    .get(SERVICE.getRecipeByCountry);
+// const getParams = match => {
+//     const values = match.result.slice(1);
+//     const keys = Array.from(match.route.path.matchAll(/:(\w+)/g)).map(result => result[1]);
 
-  recipeRoutes
-    .route('/byCategory/:category')
-    .get(SERVICE.getRecipyByCategory);
+//     return Object.fromEntries(keys.map((key, i) => [key, values[i]] ));
+// };
 
-  recipeRoutes
-    .route('/byId/:recipeId')
-    .get(SERVICE.getRecipeById);
+async function router(){
+  const potentialMatches = ROUTES.map(route => {
+    const currentPathname = window.location.pathname
+    return {
+      route,
+      result: currentPathname.match(pathToRegex(route.path))
+    };
+  });
 
-  recipeRoutes
-    .all('/:projectId', async (req, res, next)=>{
-      try {
-        const query = req.params.recipeId;
-        const data = SERVICE.getRecipeById(query);
-        req.data = data;
-        next();
-      } catch (error) {
-        res.send(error);
-      }
-    })
+  let match = potentialMatches.find(potentialMatch => potentialMatch.result !== null);
 
-  recipeRoutes
-    .route('/:recipeId')
-    .get(itemMethods(collection).readOne);
+  if (!match) {
+    match = {
+      route: ROUTES[0],
+      result: [window.location.pathname]
+    };
+  }
 
-  return recipeRoutes;
-}
-
-module.exports = router;
+  match.route.view(); // getParams(match)
+};
+  
+export default router;

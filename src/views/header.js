@@ -7,7 +7,7 @@ const categoriesList = categories.map( item => ({ 'category': item, 'url': `/${i
 const categoryTemplate = `<li><a href="{{url}}">{{category}}</a></li>`;
 
 const urlList = APPURLS.filter( url => url.display === true ).map( route => ({ 'title': route.title, 'url': route.path, 'body': route.body }) );
-const navTemplate = `<li><a href="{{url}}">{{title}}</a></li>`;
+const navTemplate = `<li><a href="{{url}}" data-link>{{title}}</a></li>`;
 
 function headerComponent(){
   renderComponent(`

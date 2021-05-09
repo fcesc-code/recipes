@@ -1,10 +1,27 @@
 import headerComponent from './views/header';
 import footerComponent from './views/footer';
 import listComponent from './views/list';
-import APPROUTES from './routes/appUrls';
+import router from './routes/router';
+
+const navigateTo = url => {
+    window.history.pushState(null, null, url);
+    router();
+};
+
+window.addEventListener("popstate", router);
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.body.addEventListener("click", e => {
+    if (e.target.matches("[data-link]")) {
+      e.preventDefault();
+      navigateTo(e.target.href);
+    }
+  });
+
+  router();
+});
 
 function renderBody( newBody ){
-  console.warn('Triggered RenderBody with', newBody.name);
   return newBody();
 }
 
@@ -15,22 +32,3 @@ function init(){
 }
 
 init();
-
-window.addEventListener('onpopstate', (event) => {
-  console.error('TRIGGERED ONPOPSTATE')
-  console.warn(event.state);
-  console.warn('entering popstate!!!');
-  const currentPath = window.location.pathname;
-  const regEx = /\/(?=[^/]+$).+/g;
-  const pathname = currentPath.match(regEx)[0];
-  console.warn('pathname', pathname);
-  window.history.pushState(
-    {},
-    pathname,
-    window.location.origin + pathname
-  )
-  console.warn('entering popstate bis');
-  const target = APPROUTES.find( element => element.path === pathname );
-  console.warn('this is what we got from target', target);
-  renderBody( target.body );
-})
