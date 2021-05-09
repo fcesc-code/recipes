@@ -11,11 +11,11 @@ function service(){
     return DATA.filter( element => element.id === id );
   }
 
-  function getRecipyByCategory( category ){
+  function getRecipesByCategory( category ){
     return DATA.filter( element => element.category === category );
   }
 
-  function getRecipeByCountry( country ){
+  function getRecipesByCountry( country ){
     return DATA.filter( element => element.country === country );
   }
 
@@ -25,13 +25,13 @@ function service(){
     return [ ...list ];
   }
 
-  function getCountry(){
+  function getCountries(){
     const list = new Set();
     DATA.forEach( element => list.add(element.country) );
     return [ ...list ];
   }
 
-  return { getAll, getRecipeById, getRecipyByCategory, getRecipeByCountry, getCategories, getCountry }
+  return { getAll, getRecipeById, getRecipesByCategory, getRecipesByCountry, getCategories, getCountries }
 }
 
 const SERVICE = service();
