@@ -16,6 +16,7 @@ lib-cov/
 build/
 build/Release/
 dist/
+**/dist
 
 #Typescript
 typings/
