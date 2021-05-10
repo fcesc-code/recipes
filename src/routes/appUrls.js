@@ -7,7 +7,7 @@ import surpriseComponent from '../views/surprise';
 const ROUTES = [
   { title: 'recipes', path: '/', display: true, view: listComponent },
   { title: 'categories', path: '/categories/', display: true, view: categoriesComponent },
-  { title: 'category', path: '/categories/:id', display: false, view: categoryComponent },
+  { title: 'category', path: '/categories/:category', display: false, view: categoryComponent },
   { title: 'surprise me!', path: '/recipies/', display: true, view: surpriseComponent },
   { title: 'about & credits', path: '/about', display: true, view: aboutComponent }
 ];

@@ -12,18 +12,33 @@ function neatList(category){
 }
 const itemTemplate = `<li><img src="{{img}}"><a href="{{url}}">{{title}}</a></li>`;
 
-function categoryComponent(category){
+function categoriesList(){
+  const categories = SERVICE.getCategories();
+  return categories.map( item => ({ 'category': item, 'url': `/categories/:${item.replace(/\s/g,'_').toLowerCase()}` }) );
+} 
+const categoryTemplate = `<li><a href="{{url}}">{{category}}</a></li>`;
+
+function categoryComponent(query){
   renderComponent(`
-    <ul class="recipies" id="recipies_by_category_${category}">
+    <nav id="nav_secondary">
+      <ul class="categories">
+        {{%%categories%%}}
+      </ul>
+    </nav>
+    <ul class="recipies" id="recipies_by_category_${query.category}">
       {{%%list%%}}
     </ul>
   `)({
-    parent: '#detailContent',
+    parent: '#content',
     styles: null,
     data: {
       list: {
-        list: neatList(category),
+        list: neatList(query.category),
         itemTemplate
+      },
+      categories: {
+        list: categoriesList(),
+        itemTemplate: categoryTemplate
       }
     }
   });

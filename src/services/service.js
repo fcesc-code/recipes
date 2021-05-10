@@ -12,11 +12,11 @@ function service(){
   }
 
   function getRecipesByCategory( category ){
-    return DATA.filter( element => element.category === category );
+    return DATA.filter( element => element.category.toLowerCase() === category.toLowerCase().replace('_',' ') );
   }
 
   function getRecipesByCountry( country ){
-    return DATA.filter( element => element.country === country );
+    return DATA.filter( element => element.country.toLowerCase() === country.toLowerCase().replace('_',' ') );
   }
 
   function getCategories(){
