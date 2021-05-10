@@ -1,36 +1,30 @@
 import headerComponent from './views/header';
 import footerComponent from './views/footer';
 import listComponent from './views/list';
-import APPROUTES from './routes/appUrls';
-
-function renderBody( newBody ){
-  console.warn('Triggered RenderBody with', newBody.name);
-  return newBody();
-}
+import router from './routes/router';
 
 function init(){
   headerComponent();
   footerComponent();
-  renderBody( listComponent );
+  listComponent();
 }
 
 init();
 
-window.addEventListener('onpopstate', (event) => {
-  console.error('TRIGGERED ONPOPSTATE')
-  console.warn(event.state);
-  console.warn('entering popstate!!!');
-  const currentPath = window.location.pathname;
-  const regEx = /\/(?=[^/]+$).+/g;
-  const pathname = currentPath.match(regEx)[0];
-  console.warn('pathname', pathname);
-  window.history.pushState(
-    {},
-    pathname,
-    window.location.origin + pathname
-  )
-  console.warn('entering popstate bis');
-  const target = APPROUTES.find( element => element.path === pathname );
-  console.warn('this is what we got from target', target);
-  renderBody( target.body );
-})
+const navigateTo = url => {
+  window.history.pushState(null, null, url);
+  router();
+};
+
+window.addEventListener("popstate", router);
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.body.addEventListener("click", event => {
+    if (event.target.matches("[data-link]")) {
+      event.preventDefault();
+      navigateTo(event.target.href);
+    }
+  });
+
+  router();
+});

@@ -31,8 +31,8 @@ function renderComponent( htmlTextInput ){
   function addDOMElements ( { parent, data } ){
     const node = bindDataToNode(data);
     const parentEl = findNode(parent);
-    if(parentEl.hasChildNodes()){ removeAllChildNodes( parentEl ) }
-    parentEl.appendChild(node);
+    if(parentEl && parentEl.hasChildNodes()){ removeAllChildNodes( parentEl ) }
+    if(parentEl) parentEl.appendChild(node);
   }
   
   async function addStyles (stylesPath) {

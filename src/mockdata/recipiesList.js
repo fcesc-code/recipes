@@ -2,7 +2,7 @@ export default [
   {
       "name": "Crock Pot Roast",
       "id": "01",
-      "category": "Roasts",
+      "category": "roasts",
       "country": "United Kingdom",
       "ingredients": [
           {
@@ -49,7 +49,7 @@ export default [
   {
       "name": "Roasted Asparagus",
       "id": "02",
-      "category": "Vegetables",
+      "category": "vegetables",
       "country": "Spain",
       "ingredients": [
           {
@@ -98,7 +98,7 @@ export default [
   {
       "name": "Curried Lentils and Rice",
       "id": "03",
-      "category": "Meat Pies",
+      "category": "meat pies",
       "country": "Canada",
       "ingredients": [
           {
@@ -145,9 +145,9 @@ export default [
       "originalURL": "https://minimalistbaker.com/coconut-curried-golden-lentils-20-minutes/"
   },
   {
-      "name": "Big Night Pizza",
+      "name": "Big Night pizza",
       "id": "04",
-      "category": "Pizza",
+      "category": "pizza",
       "country": "Italy",
       "ingredients": [
           {
@@ -215,7 +215,7 @@ export default [
   {
       "name": "Cranberry and Apple Stuffed Acorn Squash Recipe",
       "id": "05",
-      "category": "Desserts",
+      "category": "desserts",
       "country": "United States of America",
       "ingredients": [
           {
@@ -275,7 +275,7 @@ export default [
   {
       "name": "Mic's Yorkshire Puds",
       "id": "06",
-      "category": "Desserts",
+      "category": "desserts",
       "country": "United Kingdom",
       "ingredients": [
           {
@@ -327,7 +327,7 @@ export default [
   {
       "name": "Old-Fashioned Oatmeal Cookies",
       "id": "07",
-      "category": "Desserts",
+      "category": "desserts",
       "country": "United Kingdom",
       "ingredients": [
           {
@@ -421,7 +421,7 @@ export default [
   {
       "name": "Blueberry Oatmeal Squares",
       "id": "08",
-      "category": "Desserts",
+      "category": "desserts",
       "country": "United States",
       "ingredients": [
           {
