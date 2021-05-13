@@ -7,6 +7,10 @@ function service(){
     return DATA;
   }
 
+  function getNumberOfRecipies(){
+    return DATA.length;
+  }
+
   function getRecipeById( id ){
     return (!id) ? undefined : DATA.filter( element => element.id === id );
   }
@@ -41,7 +45,17 @@ function service(){
     return Array.from(list).map( cook => ({ "cook": cook }) );
   }
 
-  return { getAll, getRecipeById, getRecipesByCategory, getRecipesByCountry, getCategories, getCountries, getSources, getCooks }
+  return { 
+    getAll, 
+    getRecipeById, 
+    getRecipesByCategory, 
+    getRecipesByCountry, 
+    getCategories, 
+    getCountries, 
+    getSources, 
+    getCooks, 
+    getNumberOfRecipies 
+  }
 }
 
 const SERVICE = service();
