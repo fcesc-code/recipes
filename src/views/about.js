@@ -1,5 +1,6 @@
 import renderComponent from '../core/renderComponent';
 import SERVICE from '../services/service';
+import CREDITS from '../mockdata/credits';
 
 function listCooks(){
   return SERVICE.getCooks()
@@ -10,6 +11,13 @@ function listSources(){
   return SERVICE.getSources()
 }
 const sourceTemplate = '<li><a href="{{source}}">{{source}}</a></li>';
+
+function listPhotographers(){
+  const list = new Map();
+  CREDITS.forEach( person => list.set( person.author, person.authorUrl ) );
+  return Array.from(list.entries()).map( personArr => ({ 'author': personArr[0], 'authorUrl': personArr[1] }) );
+}
+const photographerTemplate = '<li><a href="{{authorUrl}}">{{author}}</a></li>';
 
 function aboutComponent(){
   renderComponent(`
@@ -47,6 +55,8 @@ function aboutComponent(){
       </ul>
       <p>For the author recipes, credits to:</p>
       <ul>{{%%cooks%%}}</ul>
+      <p>For the photographs, credits to:</p>
+      <ul>{{%%photographers%%}}</ul>
       <p>
         This website has been developed using following tech stack:
         <ul>
@@ -96,6 +106,10 @@ function aboutComponent(){
       sources: {
         list: listSources(),
         itemTemplate: sourceTemplate
+      },
+      photographers: {
+        list: listPhotographers(),
+        itemTemplate: photographerTemplate
       }
     }
   });

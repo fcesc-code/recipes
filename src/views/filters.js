@@ -20,7 +20,7 @@ function filtersComponent(){
       <ul class="categories">
         {{%%listOfCategories%%}}
       </ul>
-      <h3>Countries</h3>
+      <h3>Origin</h3>
       <ul class="categories">
         {{%%listOfCountries%%}}
       </ul>
