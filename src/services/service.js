@@ -31,7 +31,17 @@ function service(){
     return [ ...list ];
   }
 
-  return { getAll, getRecipeById, getRecipesByCategory, getRecipesByCountry, getCategories, getCountries }
+  function getSources(){
+    return DATA.map( recipe => ({ "id": recipe.id, "source": recipe.source }) );
+  }
+
+  function getCooks(){
+    const list = new Set()
+    DATA.filter( recipe => recipe.cook !== '' ).forEach( element => list.add(element.cook) );
+    return Array.from(list).map( cook => ({ "cook": cook }) );
+  }
+
+  return { getAll, getRecipeById, getRecipesByCategory, getRecipesByCountry, getCategories, getCountries, getSources, getCooks }
 }
 
 const SERVICE = service();

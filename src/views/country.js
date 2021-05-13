@@ -5,7 +5,7 @@ function neatList(country){
   const result = SERVICE.getRecipesByCountry(country).map(recipe => ({ 
     'title': recipe.name, 
     'img': recipe.imageURL,
-    'url': recipe.originalURL,
+    'url': recipe.source,
     'id': recipe.id
   }));
   return result;

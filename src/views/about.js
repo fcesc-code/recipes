@@ -1,4 +1,15 @@
 import renderComponent from '../core/renderComponent';
+import SERVICE from '../services/service';
+
+function listCooks(){
+  return SERVICE.getCooks()
+}
+const cookTemplate = '<li>{{cook}}</li>';
+
+function listSources(){
+  return SERVICE.getSources()
+}
+const sourceTemplate = '<li><a href="{{source}}">{{source}}</a></li>';
 
 function aboutComponent(){
   renderComponent(`
@@ -30,6 +41,12 @@ function aboutComponent(){
         or backend was allowed. For the sake of it, the author has decided to use own template render
         functions and own router, both very basic.
       </p>
+      <p>Recipes were inspired in these sites:<p>
+      <ul>
+        {{%%sources%%}}
+      </ul>
+      <p>For the author recipes, credits to:</p>
+      <ul>{{%%cooks%%}}</ul>
       <p>
         This website has been developed using following tech stack:
         <ul>
@@ -71,7 +88,15 @@ function aboutComponent(){
     parent: '#content',
     styles: null,
     data: {
-      dummy: 'Urrah! this is an about page'
+      dummy: 'Urrah! this is an about page',
+      cooks: {
+        list: listCooks(),
+        itemTemplate: cookTemplate
+      },
+      sources: {
+        list: listSources(),
+        itemTemplate: sourceTemplate
+      }
     }
   });
 }
