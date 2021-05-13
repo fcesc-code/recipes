@@ -22,7 +22,10 @@ async function router(){
   }
 
   // eslint-disable-next-line
-  (match === undefined) ? match.route.view() : match.route.view(getParams(match));
+  console.warn('ROUTER', match);
+
+  return (match === undefined) ? match.route.view() : match.route.view(getParams(match));
+
 };
   
 export default router;
