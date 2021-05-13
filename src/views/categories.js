@@ -3,7 +3,7 @@ import SERVICE from '../services/service';
 
 function categoriesList(){
   const categories = SERVICE.getCategories();
-  return categories.map( item => ({ 'category': item, 'url': `/categories:${item.replace(/\s/g,'_').toLowerCase()}` }) );
+  return categories.map( item => ({ 'category': item, 'url': `/categories/:${item.replace(/\s/g,'_').toLowerCase()}` }) );
 } 
 const categoryTemplate = `<li><a href="{{url}}">{{category}}</a></li>`;
 
@@ -23,7 +23,7 @@ function categoriesComponent(){
     data: {
       list: {
         list: categoriesList(),
-        categoryTemplate
+        itemTemplate: categoryTemplate
       }
     }
   });
