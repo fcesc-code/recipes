@@ -21,8 +21,6 @@ init();
 
 const router = new Navigo('/');
 
-router.notFound( notFoundComponent );
-
 router.on({
   '/': () => listComponent(),
   '/about': () => aboutComponent(),
@@ -32,6 +30,8 @@ router.on({
   '/countries/:country': ({data}) => countryComponent(data.country.replace(':','')),
   '/recipe/:id': ({data}) => recipeComponent(data.id.replace(':',''))
 });
+
+router.notFound( notFoundComponent );
 
 router.resolve();
 
