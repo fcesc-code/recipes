@@ -15,6 +15,8 @@ const options = {};
 const bundler = new Bundler(file, options);
 server.use(bundler.middleware());
 
+server.use('/img', express.static(path.resolve(__dirname, '../assets/img')));
+
 server.get('/', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'index.html'));
 })

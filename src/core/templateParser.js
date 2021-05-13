@@ -4,10 +4,11 @@ function parseValues(){
   function getValuesFromHtmlText(htmlText){
     const result = htmlText.match(REGEX_TO_PARSE);
     return (result === null)
-      ? null
-      : [ ...result ];
+    ? null
+    : [ ...result ];
   }
-
+  
+  /* eslint-disable */
   function substituteDynamicValues( htmlText, variables, mapOfValues ){
     let modifiedHtmlText = htmlText;
     const specialVariablesPattern = /(?<=%%)[^%\s]*(?=%%)/;
@@ -42,6 +43,7 @@ function parseValues(){
     }
     return modifiedHtmlText
   }
+  /* eslint-enable */
 
   function parseLiteral( htmlTextInput, mapOfValues ){
     const dynamicVariables = getValuesFromHtmlText(htmlTextInput);

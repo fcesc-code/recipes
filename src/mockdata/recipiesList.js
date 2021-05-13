@@ -449,7 +449,7 @@ export default [
   {
     "name": "Curried chicken salad",
     "id": "09",
-    "category": "Salads",
+    "category": "salads",
     "country": "France",
     "time": 40,
     "ingredients": [
@@ -540,7 +540,7 @@ export default [
   {
     "name": "Turkey soup with Lemon and Barley",
     "id": "10",
-    "category": "Soups",
+    "category": "soups",
     "country": "United States",
     "time": 55,
     "ingredients": [
@@ -813,7 +813,7 @@ export default [
     ],
     "imageURL": 'assets/img/12_1.jpg',
     "images": [
-      { path: 'assets/img/12_1.jpg', author: "unknown" }
+      { path: '../../assets/img/12_1.jpg', author: "unknown" }
     ],
     "source": "https://www.jamieoliver.com/recipes/vegetables-recipes/bbq-baked-beans/?family-food-category=105031",
     "cook": "Jamie Oliver"

@@ -2,26 +2,45 @@ import renderComponent from '../core/renderComponent';
 import SERVICE from '../services/service';
 
 function getRecipe(id){
-  const result = SERVICE.getRecipeById(id)[0];
-  console.warn('results from service', result);
+  const [ result ] = SERVICE.getRecipeById(id);
   return result;
 }
 
+const stepsTemplate = `<li>{{step}}</li>`;
+const ingredientsTemplate = `<li>{{quantity}} {{name}}</li>`;
+
 function recipeComponent(id){
+  const RECIPE = getRecipe(id);
   renderComponent(`
-    <ul class="recipe" id="{{recipe.id}}">
-      <img src={{recipe.imageUrl}}>
-      <p>name: {{recipe.name}}</p>
-      <p>category: {{recipe.category}}</p>
-      <p>country: {{recipe.country}}</p>
-      <p>steps: {{recipe.steps}}</p>
-      <p>ingredients: {{recipe.ingredients}}</p>
-    </ul>
+    <li class="recipe" id="{{id}}">
+      <img class="img__detail" src={{imageUrl}}>
+      <p>name: {{name}}</p>
+      <p>category: {{category}}</p>
+      <p>time: {{time}}</p>
+      <p>country: {{country}}</p>
+      <p>steps:</p>
+      <ul>{{%%steps%%}}</ul>
+      <p>ingredients:</p>
+      <ul>{{%%ingredients%%}}</ul>
+    </li>
   `)({
     parent: '#content',
     styles: null,
     data: {
-      recipe: getRecipe(id)
+      id: RECIPE.id,
+      imageUrl: RECIPE.imageURL,
+      name: RECIPE.name,
+      category: RECIPE.category,
+      origin: RECIPE.country,
+      time: RECIPE.time,
+      steps: {
+        list: RECIPE.steps.map( step => ({ step }) ),
+        itemTemplate: stepsTemplate
+      },
+      ingredients: {
+        list: RECIPE.ingredients,
+        itemTemplate: ingredientsTemplate
+      }
     }
   });
 }

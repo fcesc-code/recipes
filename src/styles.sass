@@ -149,3 +149,19 @@ nav
     text-align: center
     & a
       color: $c_bg_pinetree
+
+.img__detail
+  @include wearables
+    max-width: min(30rem, 100vw)
+  @include phones
+    max-width: min(30rem, 97vw)
+  @include tablets
+    max-width: min(30rem, 94vw)
+  @include noHD
+    max-width: min(30rem, 91vw)
+  @include SHD
+    max-width: min(30rem, 86vw)
+  @include QHD
+    max-width: min(30rem, 82vw)
+  @include HD4K
+    max-width: min(30rem, 30vw)
