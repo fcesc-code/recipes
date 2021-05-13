@@ -6,7 +6,7 @@ const DATA = SERVICE.getAll();
 const neatList = DATA.map(recipe => ({ 
   'title': recipe.name, 
   'img': recipe.imageURL,
-  'url': recipe.originalURL,
+  'url': recipe.source,
   'id': recipe.id
   })
 );

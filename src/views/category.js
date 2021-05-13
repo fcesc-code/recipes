@@ -5,7 +5,7 @@ function neatList(category){
   const result = SERVICE.getRecipesByCategory(category).map(recipe => ({ 
     'title': recipe.name, 
     'img': recipe.imageURL,
-    'url': recipe.originalURL,
+    'url': recipe.source,
     'id': recipe.id
   }));
   return result;
