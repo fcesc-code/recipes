@@ -2,14 +2,15 @@ import renderComponent from '../core/renderComponent';
 import SERVICE from '../services/service';
 
 function neatList(category){
-  const result = SERVICE.getRecipesByCategory(category).map(recipy => ({ 
-    'title': recipy.name, 
-    'img': recipy.imageURL,
-    'url': recipy.originalURL
+  const result = SERVICE.getRecipesByCategory(category).map(recipe => ({ 
+    'title': recipe.name, 
+    'img': recipe.imageURL,
+    'url': recipe.originalURL,
+    'id': recipe.id
   }));
   return result;
 }
-const itemTemplate = `<li><img src="{{img}}"><a href="{{url}}">{{title}}</a></li>`;
+const itemTemplate = `<li><img src="{{img}}"><a href="recipe/:{{id}}">{{title}}</a></li>`;
 
 function categoryComponent(query){
   renderComponent(`

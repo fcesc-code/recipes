@@ -3,13 +3,14 @@ import SERVICE from '../services/service';
 
 const DATA = SERVICE.getAll();
 
-const neatList = DATA.map(recipy => ({ 
-  'title': recipy.name, 
-  'img': recipy.imageURL,
-  'url': recipy.originalURL
+const neatList = DATA.map(recipe => ({ 
+  'title': recipe.name, 
+  'img': recipe.imageURL,
+  'url': recipe.originalURL,
+  'id': recipe.id
   })
 );
-const itemTemplate = `<li><img src="{{img}}"><a href="{{url}}">{{title}}</a></li>`;
+const itemTemplate = `<li><img src="{{img}}"><a href="recipe/:{{id}}">{{title}}</a></li>`;
 
 function listComponent(){
   renderComponent(`
