@@ -2,7 +2,7 @@ import renderComponent from '../core/renderComponent';
 import APPURLS from '../routes/appUrls';
 
 const urlList = APPURLS.filter( url => url.display === true ).map( route => ({ 'title': route.title, 'url': route.path, 'body': route.body }) );
-const navTemplate = `<li><a href="{{url}}" data-link>{{title}}</a></li>`;
+const navTemplate = `<li><a href="{{url}}" data-navigo>{{title}}</a></li>`;
 
 function headerComponent(){
   renderComponent(`
