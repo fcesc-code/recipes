@@ -1,11 +1,13 @@
 import renderComponent from '../core/renderComponent';
 import SERVICE from '../services/service';
+// eslint-disable-next-line
+import images from './../../assets/img/*.jpg';
 
 const DATA = SERVICE.getAll();
 
 const neatList = DATA.map(recipe => ({ 
   'title': recipe.name, 
-  'img': recipe.imageURL,
+  'img': images[`${recipe.id}_1`],
   'url': recipe.source,
   'id': recipe.id
   })

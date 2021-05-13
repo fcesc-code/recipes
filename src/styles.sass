@@ -165,3 +165,17 @@ nav
     max-width: min(30rem, 82vw)
   @include HD4K
     max-width: min(30rem, 30vw)
+
+.img__small
+  max-width: 15rem
+  max-height: 15rem
+  object-fit: cover
+  object-position: center
+  width: 100%
+  @include fallback
+    height: 15rem
+  @include wearablesAndPhones
+    height: 40vw
+  @include hugeDevices
+    height: 30rem
+

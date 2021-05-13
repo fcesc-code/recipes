@@ -1,5 +1,7 @@
 import renderComponent from '../core/renderComponent';
 import SERVICE from '../services/service';
+// eslint-disable-next-line
+import images from './../../assets/img/*.jpg';
 
 function getRecipe(id){
   const [ result ] = SERVICE.getRecipeById(id);
@@ -11,6 +13,7 @@ const ingredientsTemplate = `<li>{{quantity}} {{name}}</li>`;
 
 function recipeComponent(id){
   const RECIPE = getRecipe(id);
+  const newUrl = images[`${id}_1`];
   renderComponent(`
     <li class="recipe" id="{{id}}">
       <img class="img__detail" src={{imageUrl}}>
@@ -28,7 +31,7 @@ function recipeComponent(id){
     styles: null,
     data: {
       id: RECIPE.id,
-      imageUrl: RECIPE.imageURL,
+      imageUrl: newUrl,
       name: RECIPE.name,
       category: RECIPE.category,
       origin: RECIPE.country,
