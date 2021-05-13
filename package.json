@@ -5,8 +5,11 @@
   "main": "src/index.html",
   "scripts": {
     "parcel:build": "parcel build src/index.html --public-url ./ --out-dir ./dist",
+    "parcel:dev": "parcel serve src/index.html",
     "clean": "rimraf /dist /src/**/dist .cache",
-    "devserver": "npm-run-all clean babel:dev",
+    "devserver2": "npm-run-all clean babel:dev",
+    "devserver": "npm-run-all clean parcel:dev",
+    "nodemon:dev": "nodemon src/server.js",
     "babel:dev": "set NODE_ENV=development && babel-node src/server.js --exec",
     "build": "npm-run-all clean parcel:build",
     "lint": "./node_modules/.bin/eslint src --fix",

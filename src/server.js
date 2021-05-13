@@ -1,7 +1,7 @@
-import path from 'path';
-import cors from 'cors';
-// import Bundler from 'parcel-bundler';
-import express from 'express';
+const path = require('path');
+const cors = require('cors');
+const Bundler = require('parcel-bundler');
+const express = require('express');
 // import debug from 'debug';
 
 const PORT = process.env.PORT || 3010;
@@ -9,14 +9,14 @@ const server = express();
 
 server.use(cors());
 
-// const file = path.resolve(__dirname, 'index.html');
-// const options = {};
+const file = path.resolve(__dirname, 'index.html');
+const options = {};
 
-// const bundler = new Bundler(file, options);
-// server.use(bundler.middleware());
+const bundler = new Bundler(file, options);
+server.use(bundler.middleware());
 
 server.get('/', (req, res) => {
-  res.sendFile(path.resolve(__dirname, './index.html'));
+  res.sendFile(path.resolve(__dirname, 'index.html'));
 })
 
 server.listen(PORT, () => {

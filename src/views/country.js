@@ -10,11 +10,11 @@ function neatList(country){
   }));
   return result;
 }
-const itemTemplate = `<li><img src="{{img}}"><a href="recipe/:{{id}}" data-navigo>{{title}}</a></li>`;
+const itemTemplate = `<li><img src="{{img}}"><a href="/recipe/:{{id}}" data-navigo>{{title}}</a></li>`;
 
-function categoryComponent(query){
+function categoryComponent(country){
   renderComponent(`
-    <ul class="recipies" id="recipies_by_category_${query.country}">
+    <ul class="recipies" id="recipies_by_category_${country}">
       {{%%list%%}}
     </ul>
   `)({
@@ -22,7 +22,7 @@ function categoryComponent(query){
     styles: null,
     data: {
       list: {
-        list: neatList(query.country),
+        list: neatList(country),
         itemTemplate
       }
     }
