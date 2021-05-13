@@ -8,15 +8,15 @@ function service(){
   }
 
   function getRecipeById( id ){
-    return DATA.filter( element => element.id === id );
+    return (!id) ? undefined : DATA.filter( element => element.id === id );
   }
 
   function getRecipesByCategory( category ){
-    return DATA.filter( element => element.category.toLowerCase() === category.toLowerCase().replace('_',' ') );
+    return (!category) ? undefined : DATA.filter( element => element.category.toLowerCase() === category.toLowerCase().replace('_',' ') );
   }
 
   function getRecipesByCountry( country ){
-    return DATA.filter( element => element.country.toLowerCase() === country.toLowerCase().replace('_',' ') );
+    return (!country) ? undefined : DATA.filter( element => element.country.toLowerCase() === country.toLowerCase().replace('_',' ') );
   }
 
   function getCategories(){

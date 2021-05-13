@@ -7,7 +7,7 @@ function getRecipe(id){
   return result;
 }
 
-function categoryComponent(query){
+function recipeComponent(id){
   renderComponent(`
     <ul class="recipe" id="{{recipe.id}}">
       <img src={{recipe.imageUrl}}>
@@ -21,9 +21,9 @@ function categoryComponent(query){
     parent: '#content',
     styles: null,
     data: {
-      recipe: getRecipe(query.id)
+      recipe: getRecipe(id)
     }
   });
 }
 
-export default categoryComponent;
+export default recipeComponent;
