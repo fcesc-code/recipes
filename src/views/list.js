@@ -12,7 +12,12 @@ const neatList = DATA.map(recipe => ({
   'id': recipe.id
   })
 );
-const itemTemplate = `<li><img src="{{img}}"><a href="recipe/:{{id}}" data-navigo>{{title}}</a></li>`;
+const itemTemplate = `
+  <li>
+    <img src="{{img}}">
+    <a href="recipe/:{{id}}" data-navigo>{{title}}</a>
+  </li>
+`;
 
 function listComponent(){
   renderComponent(`
