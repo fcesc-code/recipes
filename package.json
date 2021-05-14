@@ -10,7 +10,7 @@
     "devserver2": "npm-run-all clean babel:dev",
     "devserver1": "npm-run-all clean parcel:dev",
     "babel:dev": "set NODE_ENV=development && babel-node src/server.js --exec",
-    "prebuild": "npm-run-all prebuild:img tcoverage lint",
+    "prebuild": "npm-run-all prebuild:img tcoverage",
     "prebuild:img": "",
     "build": "npm-run-all clean parcel:build",
     "lintfix": "./node_modules/.bin/eslint src --fix",
