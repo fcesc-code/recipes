@@ -128,7 +128,7 @@ export default [
     "cook": ""
   },
   {
-    "name": "Big Night pizza",
+    "name": "Homemade easy pizza",
     "id": "04",
     "category": "pizza",
     "country": "Italy",

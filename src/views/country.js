@@ -1,10 +1,12 @@
 import renderComponent from '../core/renderComponent';
 import SERVICE from '../services/service';
+// eslint-disable-next-line
+import images from './../../assets/img/*.jpg';
 
 function neatList(country){
   const result = SERVICE.getRecipesByCountry(country).map(recipe => ({ 
     'title': recipe.name, 
-    'img': recipe.imageURL,
+    'img': images[`${recipe.id}_1`],
     'url': recipe.source,
     'id': recipe.id
   }));

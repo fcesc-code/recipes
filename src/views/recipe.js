@@ -17,14 +17,22 @@ function recipeComponent(id){
   renderComponent(`
     <li class="recipe" id="{{id}}">
       <img class="img__detail" src={{imageUrl}}>
-      <p>name: {{name}}</p>
-      <p>category: {{category}}</p>
-      <p>time: {{time}}</p>
-      <p>country: {{country}}</p>
-      <p>steps:</p>
-      <ul>{{%%steps%%}}</ul>
-      <p>ingredients:</p>
-      <ul>{{%%ingredients%%}}</ul>
+      <h2 class="recipe__title">{{name}}</h2>
+      <div class="standard__flexrow">
+        <h4>{{category}}</h4>
+        <p class="text__secondary">{{time}} min </p>
+        <p>{{origin}}</p>
+      </div>
+      <div class="recipe__flexcontainer">
+        <div class="flexcontainer__left">
+          <p class="text__secondary">ingredients:</p>
+          <ul>{{%%ingredients%%}}</ul>
+        </div>
+        <div class="flexcontainer__right">
+          <p class="text__secondary">steps:</p>
+          <ul>{{%%steps%%}}</ul>
+        </div>
+      </div>
     </li>
   `)({
     parent: '#content',
@@ -32,7 +40,7 @@ function recipeComponent(id){
     data: {
       id: RECIPE.id,
       imageUrl: newUrl,
-      name: RECIPE.name,
+      name: RECIPE.name.toUpperCase(),
       category: RECIPE.category,
       origin: RECIPE.country,
       time: RECIPE.time,
