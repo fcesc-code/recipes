@@ -11,7 +11,18 @@ function categoriesList(){
     'img': images[`cat_${item.replace(' ','_').toLowerCase()}`]
   }) );
 } 
-const categoryTemplate = `<li class="list__item"><img class="img__small" src="{{img}}"><a href="{{url}}">{{category}}</a></li>`;
+const categoryTemplate = `
+  <li class="list__item">
+    <div class="img__container">
+      <picture>
+        <source media="(min-width: 1535px)" srcset="{{img}}-large">
+        <source media="(min-width: 767px)" srcset="{{img}}-medium">
+        <img class="img__small" src="{{img}}" alt="{{category}} recipes">
+      </picture>
+    </div>
+    <a href="{{url}}">{{category}}</a>
+  </li>
+`;
 
 function countriesList(){
   const countries = SERVICE.getCountries();
@@ -21,17 +32,28 @@ function countriesList(){
     'img': images[`ori_${item.replace(' ','_').toLowerCase()}`]
   }) )
 }
-const countryTemplate = `<li class="list__item"><img class="img__small" src="{{img}}"><a href="{{url}}">{{country}}</a></li>`;
+const countryTemplate = `
+  <li class="list__item">
+    <div class="img__container">
+      <picture>
+        <source media="(min-width: 1535px)" srcset="{{img}}-large">
+        <source media="(min-width: 767px)" srcset="{{img}}-medium">
+        <img class="img__small" src="{{img}}" alt="Recipes from {{country}}">  
+      </picture>
+    </div>
+    <a href="{{url}}">{{country}}</a>
+  </li>
+`;
 
 function filtersComponent(){
   renderComponent(`
     <section id="filters">
       <h3>Categories</h3>
-      <ul class="categories">
+      <ul class="categories recipies">
         {{%%listOfCategories%%}}
       </ul>
       <h3>Origin</h3>
-      <ul class="categories">
+      <ul class="categories recipies">
         {{%%listOfCountries%%}}
       </ul>
     </section>
