@@ -319,14 +319,14 @@ nav
   margin: 1rem 0 1rem 0
   display: flex
   flex-wrap: no-wrap
-  @include wearablesAndPhones
-    flex-direction: column
-    align-items: center
-    justify-content: flex-start
   @include fallback
     flex-direction: row
     align-items: flex-start
     justify-content: space-between
+  @include wearablesAndPhones
+    flex-direction: column
+    align-items: center
+    justify-content: flex-start
 
 .flexcontainer__left
   flex-grow: 1
