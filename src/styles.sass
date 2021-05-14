@@ -151,7 +151,7 @@ nav
     flex-direction: column
     justify-content: flex-start
     align-items: center
-  & li
+  & > li
     display: inline-block
     list-style: none
     min-width: 10rem
@@ -164,6 +164,8 @@ nav
       color: $c_bg_pinetree
 
 .img__detail
+  width: 100%
+  height: auto
   @include wearables
     max-width: min(30rem, 100vw)
   @include phones
@@ -191,3 +193,19 @@ nav
     height: 40vw
   @include hugeDevices
     height: 30rem
+
+.svg__icon
+  max-height: 25px
+
+.standard__flexcolumn
+  display: flex
+  flex-direction: column
+  justify-content: flex-starta
+  align-items: center
+
+.standard__flexrow
+  display: flex
+  flex-flow: row wrap
+  justify-content: space-between
+  & p, h2, h3, h4
+    padding: 0

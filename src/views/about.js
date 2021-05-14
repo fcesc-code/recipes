@@ -112,6 +112,10 @@ function aboutComponent(){
       <h4>Assistant professor</h4>
       <p>Xavier Julián Olmos</p>
     </section>
+    <section>
+      <h2>About the author</h2>
+      <p>Find more information about the author on <a href="https://github.com/fcesc-code/">Github</a>.</p>
+    </section>
   </article>
   `)({
     parent: '#content',

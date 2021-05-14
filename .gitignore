@@ -48,7 +48,7 @@ logs/
 #project media files
 images/
 media/
-assets/
+#assets/
 
 #project versions, copies and temporary folders
 backup/
@@ -70,14 +70,14 @@ temp/
 *.bmp
 *.eps
 *.gif
-*.ico
-*.jpg
-*.jpeg
+#*.ico
+#*.jpg
+#*.jpeg
 *.png
 *.ps
 *.psd
 *.raw
-*.svg
+#*.svg
 *.tif
 *.tiff
 *.WebP
