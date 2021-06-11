@@ -19,7 +19,7 @@ const categoryTemplate = `
         <img class="img__small" src="{{img}}" alt="{{category}} recipes">
       </picture>
     </div>
-    <a href="{{url}}">{{category}}</a>
+    <a href="{{url}}" data-navigo>{{category}}</a>
   </li>
 `;
 
@@ -39,7 +39,7 @@ const countryTemplate = `
         <img class="img__small" src="{{img}}" alt="Recipes from {{country}}">  
       </picture>
     </div>
-    <a href="{{url}}">{{country}}</a>
+    <a href="{{url}}" data-navigo>{{country}}</a>
   </li>
 `;
 
