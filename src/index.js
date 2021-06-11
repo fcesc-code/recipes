@@ -22,16 +22,16 @@ init();
 const router = new Navigo('/');
 
 router.on({
-  '/': () => listComponent(),
   '/about': () => aboutComponent(),
   '/filters': () => filtersComponent(),
   '/surprise': () => surpriseComponent(),
   '/categories/:category': ({data}) => categoryComponent(data.category.replace(':','')),
   '/countries/:country': ({data}) => countryComponent(data.country.replace(':','')),
-  '/recipe/:id': ({data}) => recipeComponent(data.id.replace(':',''))
+  '/recipe/:id': ({data}) => recipeComponent(data.id.replace(':','')),
+  '/': () => listComponent()
 });
 
-router.notFound( notFoundComponent );
+router.notFound( notFoundComponent() );
 
 router.resolve();
 

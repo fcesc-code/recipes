@@ -9,6 +9,7 @@
     "clean": "rimraf dist src/**/dist .cache .cache-loader",
     "devserver2": "npm-run-all clean babel:dev",
     "devserver1": "npm-run-all clean parcel:dev",
+    "start": "npm-run-all devserver1",
     "babel:dev": "set NODE_ENV=development && babel-node src/server.js --exec",
     "prebuild": "npm-run-all prebuild:img tcoverage",
     "prebuild:img": "",
