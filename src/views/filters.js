@@ -7,7 +7,7 @@ function categoriesList(){
   const categories = SERVICE.getCategories();
   return categories.map( item => ({ 
     'category': item, 
-    'url': `categories/${item.replace(/\s/g,'_').toLowerCase()}`,
+    'url': `categories/:${item.replace(/\s/g,'_').toLowerCase()}`,
     'img': images[`cat_${item.replace(' ','_').toLowerCase()}`]
   }) );
 } 
@@ -27,7 +27,7 @@ function countriesList(){
   const countries = SERVICE.getCountries();
   return countries.map( item => ({ 
     'country': item, 
-    'url': `countries/${item.replace(/\s/g,'_').toLowerCase()}`,
+    'url': `countries/:${item.replace(/\s/g,'_').toLowerCase()}`,
     'img': images[`ori_${item.replace(' ','_').toLowerCase()}`]
   }) )
 }
