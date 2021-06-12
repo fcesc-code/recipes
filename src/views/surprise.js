@@ -26,9 +26,9 @@ function surpriseComponent(){
       <img class="img__detail" src={{imageUrl}} alt="{{name}}">
       <h2 class="recipe__title">{{name}}</h2>
       <div class="standard__flexrow">
-        <h4><a class="inherit" href="categories/{{category}}" data-navigo>{{category}}</a></h4>
+        <h4><a class="inherit" href="{{categoryUrl}}" data-navigo>{{category}}</a></h4>
         <p class="text__secondary">{{time}} min </p>
-        <p><a class="inherit" href="countries/{{origin}}" data-navigo>{{origin}}</a></p>
+        <p><a class="inherit" href="{{originUrl}}" data-navigo>{{origin}}</a></p>
       </div>
       <div class="recipe__flexcontainer">
         <div class="flexcontainer__left">
@@ -49,7 +49,9 @@ function surpriseComponent(){
       imageUrl: RECIPE.newUrl,
       name: RECIPE.name,
       category: RECIPE.category,
+      categoryUrl: `categories/${RECIPE.category.replace(/\s/g,'_').toLowerCase()}`,
       origin: RECIPE.country,
+      originUrl: `countries/${RECIPE.country.replace(/\s/g,'_').toLowerCase()}`,
       time: RECIPE.time,
       steps: {
         list: RECIPE.steps.map( step => ({ step }) ),
