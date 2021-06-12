@@ -38,6 +38,8 @@ jobs:
         with:
           name: dist
           path: dist
+      - name: Set up firebase environment
+        run: npm run firebase use production
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:
