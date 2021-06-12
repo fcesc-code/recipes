@@ -24,6 +24,9 @@ const router = new Navigo('/');
 router.on({
   '/about': () => aboutComponent(),
   '/filters': () => filtersComponent(),
+  '/categories/:category': ({data}) => categoryComponent(data.category.replace(':','')),
+  '/countries/:country': ({data}) => countryComponent(data.country.replace(':','')),
+  '/recipe/:id': ({data}) => recipeComponent(data.id.replace(':','')),
   '/': () => listComponent()
 });
 
@@ -33,35 +36,17 @@ router.on('/surprise', () => surpriseComponent(), {
   }
 });
 
-router.on('/categories/:category', ({data}) => categoryComponent(data.category.replace(':','')), {
-  already({data}) {
-    categoryComponent(data.category.replace(':',''));
-  }
-});
-
-router.on('/countries/:country', ({data}) => countryComponent(data.country.replace(':','')), {
-  already({data}) {
-    surpriseComponent(data.country.replace(':',''));
-  }
-});
-
-router.on('/recipe/:id', ({data}) => recipeComponent(data.id.replace(':','')), {
-  already({data}) {
-    surpriseComponent(data.id.replace(':',''));
-  }
-});
-
 // this configuration is for Netlify
 router.on('/404', () => notFoundComponent(), {
   already() {
-    notFoundComponent();
+    listComponent();
   }
 });
 
 // this configuration is for local dev environment and does not work in netlify
 router.notFound( () => notFoundComponent(), {
   already() {
-    notFoundComponent();
+    listComponent();
   }
 });
 
