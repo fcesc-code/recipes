@@ -37,15 +37,15 @@ logs/
 
 #caches
 #npm
-.npm
+.npm/
 #eslint
-.eslintcache
+.eslintcache/
 #parcel
-.cache
+.cache/
 #webpack
-.cache-loader
+.cache-loader/
 #firebase
-.firebase
+.firebase/
 
 #project media files
 images/

@@ -39,7 +39,7 @@ router.on('/surprise', () => surpriseComponent(), {
 // this configuration is for Netlify
 router.on('/404', () => notFoundComponent(), {
   already() {
-    notFoundComponent();
+    listComponent();
   }
 });
 
