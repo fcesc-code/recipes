@@ -7,7 +7,7 @@ function service(){
     return DATA;
   }
 
-  function getNumberOfRecipies(){
+  function getNumberOfRecipes(){
     return DATA.length;
   }
 
@@ -36,13 +36,15 @@ function service(){
   }
 
   function getSources(){
-    return DATA.map( recipe => ({ "id": recipe.id, "source": recipe.source }) );
+    const list = new Set()
+    DATA.filter( recipe => recipe.source !== '' ).forEach( element => list.add(element.source) );
+    return [ ...list ];
   }
 
   function getCooks(){
     const list = new Set()
     DATA.filter( recipe => recipe.cook !== '' ).forEach( element => list.add(element.cook) );
-    return Array.from(list).map( cook => ({ "cook": cook }) );
+    return [ ...list ];
   }
 
   return { 
@@ -54,7 +56,7 @@ function service(){
     getCountries, 
     getSources, 
     getCooks, 
-    getNumberOfRecipies 
+    getNumberOfRecipes 
   }
 }
 

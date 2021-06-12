@@ -20,6 +20,7 @@
     "lint": "./node_modules/.bin/eslint src",
     "twatch": "jest --watchAll",
     "tcoverage": "jest --coverage",
+    "tdev": "jest --watchAll --coverage",
     "test": "jest",
     "firebase-prod": "npm-run-all build firebase:alias-prod firebase:deploy",
     "firebase-dev": "npm-run-all build firebase:alias-dev firebase:deploy",
