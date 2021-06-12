@@ -31,7 +31,7 @@ router.on({
   '/': () => listComponent()
 });
 
-router.notFound( notFoundComponent );
+router.notFound( () => notFoundComponent() );
 
 router.resolve();
 
