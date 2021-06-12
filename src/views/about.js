@@ -89,6 +89,7 @@ function aboutComponent(){
         <li><a href="https://prettier.io/">Prettier</li>
         <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Introduction">Vanilla JS</li>
         <li><a href="https://expressjs.com">Express</a></li>
+        <li><a href="https://github.com/krasimir/navigo">Navigo</a></li>
       </ul>
       <h4>Following pages were used as ressources, inspiration or knowledge base for this page:</h4>
       <ul>
