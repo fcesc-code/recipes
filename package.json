@@ -4,7 +4,7 @@
   "description": "Boilerplate for vanillaJS projects",
   "main": "src/index.html",
   "scripts": {
-    "parcel:build": "parcel build src/index.html --public-url ./ --out-dir dist --no-cache",
+    "parcel:build": "parcel build src/index.html --public-url / --out-dir dist --no-cache",
     "parcel:dev": "parcel serve src/index.html",
     "clean": "rimraf dist src/**/dist .cache .cache-loader",
     "devserver2": "npm-run-all clean babel:dev",

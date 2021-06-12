@@ -4,7 +4,7 @@ import SERVICE from '../services/service';
 import images from './../../assets/img/*.jpg';
 
 function getRandomRecipe(){
-  const range = SERVICE.getNumberOfRecipies();
+  const range = SERVICE.getNumberOfRecipes();
   const randomNumberWithinRange = Math.round(Math.random() * range).toString();
   const prefix = '0';
   const stringifiedRange = range.toString();

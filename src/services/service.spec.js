@@ -68,7 +68,7 @@ describe('Test suite for recipe service', () => {
 
   it('should return a list of sources from the service with getSources() method', () => {
     const list = new Set();
-    DATA.filter( recipe => recipe.source !== '' ).forEach( element => list.add(element.source) );
+    DATA.filter( recipe => recipe.source !== '' ).forEach( element => list.add({ id: element.id, source: element.source }) );
     const expected = [ ...list ];
 
     const current = SERVICE.getSources();
@@ -79,7 +79,7 @@ describe('Test suite for recipe service', () => {
   it('should return a list of cooks of the recipes in the service with getCooks() method', () => {
     const list = new Set();
     DATA.filter( recipe => recipe.cook !== '' ).forEach( element => list.add(element.cook) );
-    const expected = [ ...list ];
+    const expected = [ ...list ].map( cook => ({ cook }) );
 
     const current = SERVICE.getCooks();
 
