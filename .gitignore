@@ -44,6 +44,8 @@ logs/
 .cache
 #webpack
 .cache-loader
+#firebase
+.firebase
 
 #project media files
 images/

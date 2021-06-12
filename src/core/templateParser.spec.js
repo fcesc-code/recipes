@@ -1,4 +1,4 @@
-import templateParser from './templateParser';
+import templateParser from './PARSER';
 
 describe('SUITE template.parseLiteral tests', () => {
 

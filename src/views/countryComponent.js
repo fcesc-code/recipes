@@ -12,9 +12,9 @@ function neatList(country){
   }));
   return result;
 }
-const itemTemplate = `<li><img src="{{img}}" alt="{{title}}"><a href="/recipe/:{{id}}" data-navigo>{{title}}</a></li>`;
+const itemTemplate = `<li><img src="{{img}}" alt="{{title}}"><a href="/recipe/{{id}}" data-navigo>{{title}}</a></li>`;
 
-function categoryComponent(country){
+function countryComponent(country){
   renderComponent(`
     <ul class="recipies" id="recipies_by_category_${country}">
       {{%%list%%}}
@@ -31,4 +31,4 @@ function categoryComponent(country){
   });
 }
 
-export default categoryComponent;
+export default countryComponent;
