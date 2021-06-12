@@ -9,6 +9,13 @@ Subject: HTML and CSS tools I. April 2021.
 A Git repository can be found at https://github.com/fcesc-code/uoc-eines1-pac1.git
 Deploy status: [![Netlify Status](https://api.netlify.com/api/v1/badges/d97436fc-1621-4de1-b33c-f2c5567205de/deploy-status)](https://app.netlify.com/sites/gastro/deploys)
 
+## Public web
+The app can be accessed via following links:
+[Netlify prod environment](https://gastro.netlify.app/)
+[Firebase prod environment](https://recipes-3c018.web.app/)
+[Firebase dev environment](https://recipes-dev-a9010.web.app/)
+[Local dev environment](http://localhost:1234/) only local dev environment
+
 ## Tech stack
 - [Parcel](https://parceljs.org) bundler
 - [Babel](https://babeljs.io/) to transpile javascript to ES5 in production builds
