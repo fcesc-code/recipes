@@ -146,13 +146,16 @@ temp/
 *.pkg
 *.z
 
-#config files
+#private API keys and config files
+#gehercic config files
 *APICONFIG.*
 *apiconfig.*
 *SECRET*.*
 *secret*.*
 *KEYS*.*
 *keys*.*
+#firebase
+init-firebase.*
 
 # Sass
 .sass-cache/

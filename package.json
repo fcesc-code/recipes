@@ -14,6 +14,7 @@
     "prebuild": "npm-run-all prebuild:img tcoverage",
     "prebuild:img": "",
     "build": "npm-run-all clean parcel:build",
+    "build-prod": "npm-run-all clean parcel:build",
     "lintfix": "./node_modules/.bin/eslint src --fix",
     "lint": "./node_modules/.bin/eslint src",
     "twatch": "jest --watchAll",
