@@ -36,9 +36,11 @@ jobs:
         with:
           name: dist
           path: dist
+      - name: Set up firebase environment
+        run: npm run firebase use production
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:
-          args: deploy --only hosting:[environment production] --debug
+          args: deploy --only hosting
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
