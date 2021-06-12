@@ -24,14 +24,14 @@ const itemTemplate = `
       <img src="{{img}}" alt="{{title}}">
       <div class="mosaic__card">
         <div class="standard__flexrow">
-          <h4><a class="inherit" href="categories/:{{category}}" data-navigo>{{category}}</a></h4>
-          <p><a class="inherit" href="countries/:{{country}}" data-navigo>{{country}}</a></p>
+          <h4><a class="inherit" href="categories/{{category}}" data-navigo>{{category}}</a></h4>
+          <p><a class="inherit" href="countries/{{country}}" data-navigo>{{country}}</a></p>
         <div>
         <div class="standard__flexrow">
           <p class="text__secondary">{{time}} min.<p>
         </div>
         <div class="standard__flexrow hcenter">
-          <a href="recipe/:{{id}}" data-navigo>{{title}}</a>
+          <a href="recipe/{{id}}" data-navigo>{{title}}</a>
         </div>
       </div>
     </div>
