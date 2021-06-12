@@ -39,6 +39,6 @@ jobs:
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:
-          args: deploy --only hosting:[environment production] --message \"${{ github.event.head_commit.message }}\"
+          args: deploy --only hosting:[environment production]
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
