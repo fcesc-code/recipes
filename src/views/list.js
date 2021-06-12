@@ -21,7 +21,7 @@ const neatList = DATA.map(recipe => ({
 const itemTemplate = `
   <li>
     <div class="standard__flexcolumn  mosaic__item">
-      <img src="{{img}}">
+      <img src="{{img}}" alt="{{title}}">
       <div class="mosaic__card">
         <div class="standard__flexrow">
           <h4><a class="inherit" href="categories/:{{category}}" data-navigo>{{category}}</a></h4>
