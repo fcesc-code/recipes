@@ -1,4 +1,4 @@
-const CREDITS = [
+const CREDITS_MEDIA = [
   {
     image: 'cat_roasts.jpg',
     imgUrl: '',
@@ -115,4 +115,4 @@ const CREDITS = [
 
 
 
-export default CREDITS;
+export default CREDITS_MEDIA;
