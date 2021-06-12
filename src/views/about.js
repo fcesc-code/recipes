@@ -104,7 +104,7 @@ function aboutComponent(){
     </section>
     <section>
       <h2>Credits</h2>
-      <h4>Recipes were inspired in these sites:<h4>
+      <h4>Recipes were inspired in these sites:</h4>
       <ul>{{%%sources%%}}</ul>
       <h4>For the author recipes, credits to:</h4>
       <ul>{{%%cooks%%}}</ul>
