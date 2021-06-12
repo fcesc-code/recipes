@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "production": "recipes-3c018",
+    "dev": "recipes-dev-a9010"
+  }
+}
