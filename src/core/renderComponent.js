@@ -1,4 +1,4 @@
-import PARSER from './templateParser';
+import PARSER from './PARSER';
 
 function renderComponent( htmlTextInput ){
   function findNode (query){
@@ -12,7 +12,7 @@ function renderComponent( htmlTextInput ){
       return dataMap;
     }
 
-    const inputData = (data) ? createDataMap(data) : null;
+    const inputData = (data) ? createDataMap() : null;
     const templateWithData = PARSER.parseLiteral( htmlTextInput, inputData );
 
     const node = document

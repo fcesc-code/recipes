@@ -1,5 +1,5 @@
 import renderComponent from '../core/renderComponent';
-import APPURLS from '../routes/appUrls';
+import APPURLS from '../routes/ROUTES';
 
 const urlList = APPURLS.filter( url => url.display === true ).map( route => ({ 'title': route.title.toUpperCase(), 'url': route.path, 'body': route.body }) );
 const navTemplate = `<li><a href="{{url}}" data-navigo>{{title}}</a></li>`;

@@ -1,13 +1,9 @@
 const path = require('path');
-const cors = require('cors');
 const Bundler = require('parcel-bundler');
 const express = require('express');
-// import debug from 'debug';
 
 const PORT = process.env.PORT || 3010;
 const server = express();
-
-server.use(cors());
 
 const file = path.resolve(__dirname, 'index.html');
 const options = {};
