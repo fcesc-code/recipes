@@ -11,10 +11,10 @@ Deploy status: [![Netlify Status](https://api.netlify.com/api/v1/badges/d97436fc
 
 ## Public web
 The app can be accessed via following links:
-[Netlify prod environment](https://gastro.netlify.app/)
-[Firebase prod environment](https://recipes-3c018.web.app/)
-[Firebase dev environment](https://recipes-dev-a9010.web.app/)
-[Local dev environment](http://localhost:1234/) only local dev environment
+- [Netlify prod environment](https://gastro.netlify.app/)
+- [Firebase prod environment](https://recipes-3c018.web.app/)
+- [Firebase dev environment](https://recipes-dev-a9010.web.app/)
+- [Local dev environment](http://localhost:1234/) only local dev environment
 
 ## Tech stack
 - [Parcel](https://parceljs.org) bundler

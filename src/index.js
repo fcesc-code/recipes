@@ -1,15 +1,15 @@
 import Navigo from 'navigo';
 
-import headerComponent from './views/header';
-import footerComponent from './views/footer';
-import listComponent from './views/list';
-import aboutComponent from './views/about';
-import filtersComponent from './views/filters';
-import surpriseComponent from './views/surprise';
-import categoryComponent from './views/category';
-import countryComponent from './views/country';
-import recipeComponent from './views/recipe';
-import notFoundComponent from './views/notFound';
+import headerComponent from './views/headerComponent';
+import footerComponent from './views/footerComponent';
+import listComponent from './views/listComponent';
+import aboutComponent from './views/aboutComponent';
+import filtersComponent from './views/filtersComponent';
+import surpriseComponent from './views/surpriseComponent';
+import categoryComponent from './views/categoryComponent';
+import countryComponent from './views/countryComponent';
+import recipeComponent from './views/recipeComponent';
+import notFoundComponent from './views/notFoundComponent';
 
 function init(){
   headerComponent();

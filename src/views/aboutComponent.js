@@ -1,6 +1,6 @@
 import renderComponent from '../core/renderComponent';
 import SERVICE from '../services/service';
-import CREDITS from '../mockdata/credits';
+import CREDITS from '../mockdata/CREDITS';
 
 function listCooks(){
   return SERVICE.getCooks()
