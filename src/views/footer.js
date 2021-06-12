@@ -2,7 +2,7 @@ import renderComponent from '../core/renderComponent';
 
 function footerComponent(){
   renderComponent(`
-    <p>Francesc Brugarolas - <a href='{{url}}'>UOC</a> - Eines HTML i CSS I - PAC1 - Mai 2021</p>
+    <p><a class="inherit" href="https://github.com/fcesc-code">Francesc Brugarolas</a> - <a href='{{url}}'>UOC</a> - Eines HTML i CSS I - PAC#1, #2 & #3 - June 2021</p>
   `)({
     parent: 'footer',
     styles: null,

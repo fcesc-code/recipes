@@ -16,12 +16,12 @@ function recipeComponent(id){
   const newUrl = images[`${id}_1`];
   renderComponent(`
     <li class="recipe" id="{{id}}">
-      <img class="img__detail" src={{imageUrl}}>
+      <img class="img__detail" src={{imageUrl}} alt="{{name}}">
       <h2 class="recipe__title">{{name}}</h2>
       <div class="standard__flexrow">
-        <h4>{{category}}</h4>
+        <h4><a class="inherit" href="categories/:{{category}}" data-navigo>{{category}}</a></h4>
         <p class="text__secondary">{{time}} min </p>
-        <p>{{origin}}</p>
+        <p><a class="inherit" href="countries/:{{origin}}" data-navigo>{{origin}}</a></p>
       </div>
       <div class="recipe__flexcontainer">
         <div class="flexcontainer__left">

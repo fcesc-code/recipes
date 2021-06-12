@@ -7,6 +7,7 @@ Subject: HTML and CSS tools I. April 2021.
 
 ## Repo
 A Git repository can be found at https://github.com/fcesc-code/uoc-eines1-pac1.git
+Deploy status: [![Netlify Status](https://api.netlify.com/api/v1/badges/d97436fc-1621-4de1-b33c-f2c5567205de/deploy-status)](https://app.netlify.com/sites/gastro/deploys)
 
 ## Tech stack
 - [Parcel](https://parceljs.org) bundler

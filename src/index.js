@@ -24,14 +24,31 @@ const router = new Navigo('/');
 router.on({
   '/about': () => aboutComponent(),
   '/filters': () => filtersComponent(),
-  '/surprise': () => surpriseComponent(),
   '/categories/:category': ({data}) => categoryComponent(data.category.replace(':','')),
   '/countries/:country': ({data}) => countryComponent(data.country.replace(':','')),
   '/recipe/:id': ({data}) => recipeComponent(data.id.replace(':','')),
   '/': () => listComponent()
 });
 
-router.notFound( notFoundComponent() );
+router.on('/surprise', () => surpriseComponent(), {
+  already() {
+    surpriseComponent();
+  }
+});
+
+// this configuration is for Netlify
+router.on('/404', () => notFoundComponent(), {
+  already() {
+    notFoundComponent();
+  }
+});
+
+// this configuration is for local dev environment and does not work in netlify
+router.notFound( () => notFoundComponent(), {
+  already() {
+    listComponent();
+  }
+});
 
 router.resolve();
 
