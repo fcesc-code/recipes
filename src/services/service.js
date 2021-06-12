@@ -7,7 +7,7 @@ function service(){
     return DATA;
   }
 
-  function getNumberOfRecipies(){
+  function getNumberOfRecipes(){
     return DATA.length;
   }
 
@@ -42,7 +42,7 @@ function service(){
   function getCooks(){
     const list = new Set()
     DATA.filter( recipe => recipe.cook !== '' ).forEach( element => list.add(element.cook) );
-    return Array.from(list).map( cook => ({ "cook": cook }) );
+    return [ ...list ].map( cook => ({ cook }) );
   }
 
   return { 
@@ -54,7 +54,7 @@ function service(){
     getCountries, 
     getSources, 
     getCooks, 
-    getNumberOfRecipies 
+    getNumberOfRecipes 
   }
 }
 
