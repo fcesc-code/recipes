@@ -11,7 +11,7 @@
     "devserver1": "npm-run-all clean parcel:dev",
     "start": "npm-run-all devserver1",
     "babel:dev": "set NODE_ENV=development && babel-node src/server.js --exec",
-    "prebuild": "npm-run-all prebuild:img tcoverage",
+    "prebuild": "tcoverage",
     "prebuild:img": "",
     "ci": "npm-run-all lint tcoverage",
     "build": "npm-run-all clean parcel:build",
