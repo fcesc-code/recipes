@@ -4,7 +4,7 @@
   "description": "Boilerplate for vanillaJS projects",
   "main": "src/index.html",
   "scripts": {
-    "parcel:build": "parcel build src/index.html --public-url ./ --out-dir dist --no-source-maps --no-cache",
+    "parcel:build": "parcel build src/index.html --public-url ./ --out-dir dist --no-cache",
     "parcel:dev": "parcel serve src/index.html",
     "clean": "rimraf dist src/**/dist .cache .cache-loader",
     "devserver2": "npm-run-all clean babel:dev",
@@ -13,13 +13,19 @@
     "babel:dev": "set NODE_ENV=development && babel-node src/server.js --exec",
     "prebuild": "npm-run-all prebuild:img tcoverage",
     "prebuild:img": "",
+    "ci": "npm-run-all lint tcoverage",
     "build": "npm-run-all clean parcel:build",
     "build-prod": "npm-run-all clean parcel:build",
     "lintfix": "./node_modules/.bin/eslint src --fix",
     "lint": "./node_modules/.bin/eslint src",
     "twatch": "jest --watchAll",
     "tcoverage": "jest --coverage",
-    "test": "jest"
+    "test": "jest",
+    "firebase-prod": "npm-run-all build firebase:alias-prod firebase:deploy",
+    "firebase-dev": "npm-run-all build firebase:alias-dev firebase:deploy",
+    "firebase:alias-prod": "firebase use production",
+    "firebase:alias-dev": "firebase use dev",
+    "firebase:deploy": "firebase deploy --only hosting"
   },
   "devDependencies": {
     "@babel/cli": "^7.13.16",
