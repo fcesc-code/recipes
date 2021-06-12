@@ -36,6 +36,14 @@ router.on('/surprise', () => surpriseComponent(), {
   }
 });
 
+// this configuration is for Netlify
+router.on('/404', () => notFoundComponent(), {
+  already() {
+    notFoundComponent();
+  }
+});
+
+// this configuration is for local dev environment and does not work in netlify
 router.notFound( () => notFoundComponent(), {
   already() {
     listComponent();
