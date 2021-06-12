@@ -3,7 +3,7 @@ name: Build and Deploy DEVELOPMENT
 on:
   push:
     branches:
-      - master
+      - dev
   # Allows to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -13,13 +13,13 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout Repo
-        uses: actions/checkout@master
+        uses: actions/checkout@dev
       - name: Install Dependencies
         run: npm install
       - name: Build
         run: npm run build-prod
       - name: Archive Production Artifact
-        uses: actions/upload-artifact@master
+        uses: actions/upload-artifact@dev
         with:
           name: dist
           path: dist
@@ -30,15 +30,15 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout Repo
-        uses: actions/checkout@master
+        uses: actions/checkout@dev
       - name: Download Artifact
-        uses: actions/download-artifact@master
+        uses: actions/download-artifact@dev
         with:
           name: dist
           path: dist
       - name: Deploy to Firebase
-        uses: w9jds/firebase-action@master
+        uses: w9jds/firebase-action@dev
         with:
-          args: deploy --only hosting
+          args: deploy --only hosting:[environment dev] --message \"${{ github.event.head_commit.message }}\"
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
