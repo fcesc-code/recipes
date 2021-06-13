@@ -275,15 +275,15 @@ nav
   font-size: .8em
 
 .hcenter
-  width: inherit
   position: relative
   & > a
     text-align: left
+    margin-top: .1rem
   &::before
     content: ''
     display: block
     background: yellow
-    width: 100%
+    width: 80%
     height: 4px
     position: absolute
     top: 0
@@ -300,6 +300,7 @@ nav
 
 .mosaic__card
   height: 5rem
+  width: 100%
 
 .recipe__title
   color: $c_bg_pinetree
@@ -375,3 +376,16 @@ nav
     height: 100%
     max-height: 1080px
     border: none
+
+.before
+  width: inherit
+  position: relative
+  & > p
+    text-align: left
+  &::before
+    content: ''
+    display: block
+    width: 100%
+    height: 1px
+    position: absolute
+    top: 0
