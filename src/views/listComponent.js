@@ -1,5 +1,5 @@
 import renderComponent from '../core/renderComponent';
-import SERVICE from '../services/service';
+import SERVICE from '../services/SERVICE';
 /* eslint-disable */
 import images from './../../assets/img/*.jpg';
 import svgs from './../../assets/svg/*.svg';

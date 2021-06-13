@@ -8,7 +8,7 @@ import images from './../../assets/img/*.jpg';
 
 function headerComponent(){
   renderComponent(`
-    <div class="standard__flexrow--left">
+    <div class="standard__flexrow--left" id="nav-top">
       <img src="{{themeImg}}" class="img__theme" alt="">
       <h1 class="mainTitle">RECIPES</h1>
     </div>
