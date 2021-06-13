@@ -9,48 +9,48 @@ $HD4K: 7679px
 $maxBodyWidth: 3500px
 
 @mixin wearables
-  @media (max-device-width: #{$wearables})
+  @media (max-width: #{$wearables})
     @content
 
 @mixin phones
-  @media (min-device-width: #{$wearables + 1px}) and (max-device-width: #{$phones})
+  @media (min-width: #{$wearables + 1px}) and (max-width: #{$phones})
     @content
 
 @mixin tablets
-  @media (min-device-width: #{$phones + 1px}) and (max-device-width: #{$tablets})
+  @media (min-width: #{$phones + 1px}) and (max-width: #{$tablets})
     @content
 
 @mixin noHD
-  @media (min-device-width: #{$tablets + 1px}) and (max-device-width: #{$noHD})
+  @media (min-width: #{$tablets + 1px}) and (max-width: #{$noHD})
     @content
 
 @mixin SHD
-  @media (min-device-width: #{$noHD + 1px}) and (max-device-width: #{$SHD})
+  @media (min-width: #{$noHD + 1px}) and (max-width: #{$SHD})
     @content
 
 @mixin QHD
-  @media (min-device-width: #{$SHD + 1px}) and (max-device-width: #{$QHD})
+  @media (min-width: #{$SHD + 1px}) and (max-width: #{$QHD})
     @content
 
 @mixin HD4K
-  @media (min-device-width: #{$QHD + 1px})
+  @media (min-width: #{$QHD + 1px})
     @content
 
 @mixin fallback
   @content
 
 @mixin wearablesAndPhones
-  @media (max-device-width: #{$wearables})
+  @media (max-width: #{$wearables})
     @content
 
 @mixin allMobile
-  @media (max-device-width: #{$tablets})
+  @media (max-width: #{$tablets})
     @content
 
 @mixin mostPc
-  @media (min-device-width: #{$tablets + 1px}) and (max-device-width: #{$SHD})
+  @media (min-width: #{$tablets + 1px}) and (max-width: #{$SHD})
     @content
 
 @mixin hugeDevices
-  @media (min-device-width: #{$SHD + 1px})
+  @media (min-width: #{$SHD + 1px})
     @content

@@ -21,7 +21,10 @@ const photographerTemplate = '<li><a href="{{authorUrl}}">{{author}}</a></li>';
 
 function aboutComponent(){
   renderComponent(`
-    <article>
+  <article>
+    <section class="embedded-video">
+      <iframe src="https://www.youtube.com/embed/EKgwmMxh2g8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </section>
     <section>
       <h2>About the site</h2>
       <h4>Why Gastronomy</h4>
@@ -36,8 +39,8 @@ function aboutComponent(){
         filtered with different criteria, with visual contents and basic css animations. 
       </p>
       <p>
-        The next steps are to develop a api module to fetch recipies from an open, crowd-funded database 
-        with repicies from all over the world: 
+        The next step is to develop an <abbr title="application programming interface">api</abbr> module to 
+        fetch recipies from an open, crowd-funded database with repicies from all over the world: 
         <a href="https://rapidapi.com/thecocktaildb/api/themealdb">The MealDB API.</a>
       </p>
       <p>
@@ -46,9 +49,10 @@ function aboutComponent(){
       <h4>Educational purposes</h4>
       <p>
         This project is an exercise doing for "HTML and CSS Tools 1" Subject, as part of the 
-        <abbr title="Universitat Oberta de Catalunya"><a href="">UOC</a></abbr> Master in 
+        <abbr title="Universitat Oberta de Catalunya"><a href="https://uoc.edu">UOC</a></abbr> Master in 
         <a href="https://estudis.uoc.edu/ca/masters-universitaris/desenvolupament-llocs-aplicacions-web/presentacio">
-        Webb app and sites development</a>. It has been developed in March and April 2021.
+        Web app and sites development</a>. It has been developed between <time datetime="2021-03">March</time> 
+        and <time datetime="2021-06">June 2021</time>.
       </p>
       <h4>Open source</h4>
       <p>
@@ -79,6 +83,7 @@ function aboutComponent(){
         <li><a href="https://parceljs.org">Parcel</a></li>
         <li><a href="https://babeljs.io/">Babel</li>
         <li><a href="https://www.netlify.com/">Netlify</a><li>
+        <li><a href="https://firebase.google.com/">Firebase</a><li>
         <li><a href="https://jestjs.io/">Jest</li>
         <li><a href="https://sass-lang.com/">Sass</li>
         <li><a href="https://www.sonarqube.org/">Sonarqube</li>
