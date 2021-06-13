@@ -1,7 +1,7 @@
 import renderComponent from '../core/renderComponent';
 import SERVICE from '../services/RECIPES_SERVICE';
 // eslint-disable-next-line
-import images from './../../assets/img/*.jpg';
+import images from './../../assets/img/*.webp';
 
 function getRandomRecipe(){
   const range = SERVICE.getNumberOfRecipes();
@@ -11,7 +11,7 @@ function getRandomRecipe(){
   const dif = stringifiedRange.length - randomNumberWithinRange.length;
   const randomId = `${prefix.repeat(dif)}${randomNumberWithinRange}`;
   const [ result ] = SERVICE.getRecipeById(randomId);
-  result.newUrl = images[`${randomId}_1`];
+  result.newUrl = images[`${randomId}_1_small`];
   return result;
 }
 

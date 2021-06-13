@@ -1,7 +1,7 @@
 import renderComponent from '../core/renderComponent';
 import SERVICE from '../services/RECIPES_SERVICE';
 // eslint-disable-next-line
-import images from './../../assets/img/*.jpg';
+import images from './../../assets/img/*.webp';
 
 function getRecipe(id){
   const [ result ] = SERVICE.getRecipeById(id);
@@ -13,7 +13,7 @@ const ingredientsTemplate = `<li>{{quantity}} {{name}}</li>`;
 
 function recipeComponent(id){
   const RECIPE = getRecipe(id);
-  const newUrl = images[`${id}_1`];
+  const newUrl = images[`${id}_1_small`];
   renderComponent(`
     <li class="recipe" id="{{id}}">
       <img class="img__detail" src={{imageUrl}} loading="lazy" alt="{{name}}">

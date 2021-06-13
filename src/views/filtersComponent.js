@@ -1,14 +1,14 @@
 import renderComponent from '../core/renderComponent';
 import SERVICE from '../services/RECIPES_SERVICE';
 // eslint-disable-next-line
-import images from './../../assets/img/*.jpg';
+import images from './../../assets/img/*.webp';
 
 function categoriesList(){
   const categories = SERVICE.getCategories();
   return categories.map( item => ({ 
     'category': item, 
     'url': `categories/${item.replace(/\s/g,'_').toLowerCase()}`,
-    'img': images[`cat_${item.replace(' ','_').toLowerCase()}`]
+    'img': images[`cat_${item.replace(' ','_').toLowerCase()}_small`]
   }) );
 } 
 const categoryTemplate = `
@@ -28,7 +28,7 @@ function countriesList(){
   return countries.map( item => ({ 
     'country': item, 
     'url': `countries/${item.replace(/\s/g,'_').toLowerCase()}`,
-    'img': images[`ori_${item.replace(' ','_').toLowerCase()}`]
+    'img': images[`ori_${item.replace(' ','_').toLowerCase()}_small`]
   }) )
 }
 const countryTemplate = `

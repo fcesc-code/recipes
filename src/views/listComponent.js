@@ -1,7 +1,7 @@
 import renderComponent from '../core/renderComponent';
 import SERVICE from '../services/RECIPES_SERVICE';
 /* eslint-disable */
-import images from './../../assets/img/*.jpg';
+import images from './../../assets/img/*.webp';
 import svgs from './../../assets/svg/*.svg';
 /* eslint-enable */
 
@@ -14,7 +14,7 @@ const neatList = DATA.map(recipe => ({
   'country': recipe.country,
   'countryUrl': `countries/${recipe.country.replace(/\s/g,'_').toLowerCase()}`,
   'time': recipe.time,
-  'img': images[`${recipe.id}_1`],
+  'img': images[`${recipe.id}_1_small`],
   'url': recipe.source,
   'id': recipe.id,
   'timerIcon': svgs.timer
@@ -28,8 +28,8 @@ const itemTemplate = `
         <div class="standard__flexrow">
           <h4><a class="inherit" href="{{categoryUrl}}" data-navigo>{{category}}</a></h4>
           <p><a class="inherit" href="{{countryUrl}}" data-navigo>{{country}}</a></p>
-        <div>
-        <div class="standard__flexrow">
+        </div>
+        <div class="standard__flexrow before">
           <p class="text__secondary">{{time}} min.<p>
         </div>
         <div class="standard__flexrow hcenter">

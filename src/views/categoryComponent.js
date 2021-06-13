@@ -1,12 +1,12 @@
 import renderComponent from '../core/renderComponent';
 import SERVICE from '../services/RECIPES_SERVICE';
 // eslint-disable-next-line
-import images from './../../assets/img/*.jpg';
+import images from './../../assets/img/*.webp';
 
 function neatList(category){
   const result = SERVICE.getRecipesByCategory(category).map(recipe => ({ 
     'title': recipe.name, 
-    'img': images[`${recipe.id}_1`],
+    'img': images[`${recipe.id}_1_small`],
     'url': recipe.source,
     'id': recipe.id
   }));
