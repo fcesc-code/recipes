@@ -4,7 +4,7 @@ import APPURLS from '../routes/ROUTES';
 const urlList = APPURLS.filter( url => url.display === true ).map( route => ({ 'title': route.title.toUpperCase(), 'url': route.path, 'body': route.body }) );
 const navTemplate = `<li><a href="{{url}}" data-navigo>{{title}}</a></li>`;
 // eslint-disable-next-line
-import images from './../../assets/img/*.jpg';
+import images from './../../assets/img/*.webp';
 
 function headerComponent(){
   renderComponent(`
@@ -21,7 +21,7 @@ function headerComponent(){
     styles: '',
     data: {
       // eslint-disable-next-line
-      themeImg: images[`theme`],
+      themeImg: images[`theme_small`],
       emblem: 'Quick, romantic, healthy or delicious cooking? Find recipies for all your needs.',
       navMenu: {
         list: urlList,
