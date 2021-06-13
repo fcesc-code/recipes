@@ -73,8 +73,8 @@ temp/
 *.eps
 *.gif
 #*.ico
-#*.jpg
-#*.jpeg
+*.jpg
+*.jpeg
 *.png
 *.ps
 *.psd
@@ -82,7 +82,7 @@ temp/
 #*.svg
 *.tif
 *.tiff
-*.WebP
+#*.webp
 #audio
 *.aac
 *.adts
