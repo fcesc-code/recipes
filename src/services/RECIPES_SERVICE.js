@@ -58,6 +58,6 @@ function service(){
   }
 }
 
-const SERVICE = service();
+const RECIPES_SERVICE = service();
 
-export default SERVICE;
+export default RECIPES_SERVICE;
