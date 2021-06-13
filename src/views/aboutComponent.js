@@ -1,5 +1,5 @@
 import renderComponent from '../core/renderComponent';
-import SERVICE from '../services/service';
+import SERVICE from '../services/SERVICE';
 import CREDITS from '../mockdata/CREDITS_MEDIA';
 
 function listCooks(){
@@ -35,8 +35,9 @@ function aboutComponent(){
       </p>
       <h4>Development status</h4>
       <p>
-        The gastro-app has presently a basic functionality: a limited list of recipes that can be 
-        filtered with different criteria, with visual contents and basic css animations. 
+        The gastro-app has presently a basic functionality: a limited list of recipes that can be filtered 
+        with different criteria, with visual contents and basic <abbr title="cascade stylesheets">css</abbr> 
+        animations. 
       </p>
       <p>
         The next step is to develop an <abbr title="application programming interface">api</abbr> module to 
@@ -44,7 +45,7 @@ function aboutComponent(){
         <a href="https://rapidapi.com/thecocktaildb/api/themealdb">The MealDB API.</a>
       </p>
       <p>
-        Ohter nice-to-have items for future development are: include ordering and autosuggest search bar.
+        Ohter nice-to-have items for future development are: pagination, ordering and autosuggest search bar.
       </p>
       <h4>Educational purposes</h4>
       <p>
@@ -56,14 +57,41 @@ function aboutComponent(){
       </p>
       <h4>Open source</h4>
       <p>
-        The code for this project is open source and was developed for educational purposes.
-        A repository of this project can be found in Github in this 
-        <a href="https://github.com/fcesc-code/uoc-eines1-pac1#readme">link</a>.
+        The code for this project is open source and was developed for educational purposes. Luckily for the world,
+        npm has not been cluttered with another dependency as a result. A repository of this project can be found 
+        in <a href="https://github.com/fcesc-code/uoc-eines1-pac1#readme">Github</a>.
+      </p>
+      <p>
+        The renderComponent along with the (unfortunately but necessarily) higly coupled parser function allow
+        in a very lightweight way to render html content dynamically. This web for example is a 
+        <abbr title="Single Page Application">SPA</abbr> using only VanillaJS. The render is programmed in a 
+        functional style instead of classes, which result in a lighter boilerplate code. 
+      </p>
+      <p>        
+        An interesting feature is the special syntax used in to parse the HTML code. Apart from the usual double 
+        bracket notation to replace variables <code>Some html text with your { { variable } }</code>, the parser has 
+        been programed so that when iterated over an array of objects you can just use the <code>{ { %% list %% } }</code>
+        double % notation inside the brackets to identify where the list should be expanded and a template for the 
+        list as a separate variable. In the template, you can directly refer to the properties ob the object instead 
+        of having to acces them all the time with <code>element.property</code> syntax. Find examples in some 
+        components in the Github <a href="https://github.com/fcesc-code/uoc-eines1-pac1">repository</a>.
       </p>
       <h4>Development methodology</h4>
       <p>
-        The project has been developed using a SCRUM framework, with small iterations. The testing has played an important
-        role in the development of critical functions. A continuous deployment flow was integrated in the git repository.
+        The project has been developed using a 
+        <abbr title="framework for developing, delivering, and sustaining complex products">SCRUM</abbr> 
+        framework, with small iterations. 
+      </p>
+      <p>
+        The testing has played an important role in the development of critical functions, especially for 
+        the development of the HtmlParser, the renderComponent function, both of which have been developed
+        as <abbr title="Test-driven development">TDD</abbr>, as well as the service of the app. The focus
+        of the <abbr title="Test-driven development">TDD</abbr> has only been put where is crucially needed,
+        not in code more related to content, for example, the boilerplate for each of the components.
+      </p>
+      <p>        
+        A continuous deployment flow was integrated in the git repository, automated in Netlify or using
+        Github actions for Firebase.
       </p>
     </section>
     <section>
@@ -120,7 +148,8 @@ function aboutComponent(){
     </section>
     <section>
       <h2>About the author</h2>
-      <p>Find more information about the author on <a href="https://github.com/fcesc-code/">Github</a>.</p>
+      <p>Find more information about the author on <a href="https://github.com/fcesc-code/">Github</a> 
+      or <a href="https://linkedin.com/in/francescbrugarolas/">LinkedIn</a>.</p>
     </section>
   </article>
   `)({

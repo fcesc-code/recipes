@@ -1,4 +1,4 @@
-import SERVICE from './service';
+import SERVICE from './SERVICE';
 import DATA from '../mockdata/recipiesList';
 
 describe('Test suite for recipe service', () => {

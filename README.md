@@ -27,6 +27,7 @@ The app can be accessed via following links:
 - [Netlify](https://www.netlify.com/)
 - [Firebase](https://firebase.google.com/)
 - [sonarqube](https://www.sonarqube.org/)
+- [Lighthouse](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?hl=es)
 - [VSCode](https://code.visualstudio.com/)
 - [Axios](https://github.com/axios/axios) for http requests (both browser and node compatible)
 - [Navigo](https://github.com/krasimir/navigo)
@@ -37,11 +38,13 @@ The app can be accessed via following links:
 - HTML
 
 ## Quality gate
-[HTML Validator](https://jigsaw.w3.org/css-validator/): 0 errors | 0 warnings \
-[WAVE](https://wave.webaim.org/) accessibility validator: 0 errors | 1 contrast error | 1 alert \
-[Jest](https://jestjs.io/): 15 tests passed \
-[Sonarqube](https://www.sonarqube.org/): 0 bugs | 2 code smells | 0 vulnerabilities | 0 security hotspots | 0% code duplication \
-[css validator](https://jigsaw.w3.org/css-validator/) used with the build css from sass code: 0 errors | 7 warnings (from autoprefixer code!)
+- [HTML Validator](https://jigsaw.w3.org/css-validator/): 0 errors | 0 warnings \
+- [WAVE](https://wave.webaim.org/) accessibility validator: 0 errors | 1 contrast error | 1 alert \
+- [Jest](https://jestjs.io/): 15 tests passed \
+- [Sonarqube](https://www.sonarqube.org/): 0 bugs | 2 code smells | 0 vulnerabilities | 0 security hotspots | 0% code duplication \
+- [css validator](https://jigsaw.w3.org/css-validator/) used with the build css: 0 errors | 7 warnings (from autoprefixer code!)
+- Github [Dependabot security alerts](https://github.blog/2020-06-01-keep-all-your-packages-up-to-date-with-dependabot/): 3 warnings -> all of which from imagemin...
+To
 
 ## Credits
 Assistant professor Xavier Julián Olmos.
