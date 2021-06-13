@@ -9,7 +9,7 @@ import images from './../../assets/img/*.jpg';
 function headerComponent(){
   renderComponent(`
     <div class="standard__flexrow--left" id="nav-top">
-      <img src="{{themeImg}}" class="img__theme" alt="">
+      <img src="{{themeImg}}" class="img__theme" loading="lazy" alt="">
       <h1 class="mainTitle">RECIPES</h1>
     </div>
     <p class="mainSubtitle">{{emblem}}</p>
