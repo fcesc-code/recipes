@@ -16,7 +16,7 @@ const categoryTemplate = `
     <div class="img__container">
       <picture>
         <source media="(min-width: 1535px)" srcset="{{img}}-large">
-        <img class="img__small" src="{{img}}" alt="{{category}} recipes">
+        <img class="img__small" loading="lazy" src="{{img}}" alt="{{category}} recipes">
       </picture>
     </div>
     <a href="{{url}}" data-navigo>{{category}}</a>
@@ -36,7 +36,7 @@ const countryTemplate = `
     <div class="img__container">
       <picture>
         <source media="(min-width: 1535px)" srcset="{{img}}-large">
-        <img class="img__small" src="{{img}}" alt="Tasty food from {{country}}">  
+        <img class="img__small" loading="lazy" src="{{img}}" alt="Tasty food from {{country}}">  
       </picture>
     </div>
     <a href="{{url}}" data-navigo>{{country}}</a>

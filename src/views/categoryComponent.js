@@ -12,7 +12,7 @@ function neatList(category){
   }));
   return result;
 }
-const itemTemplate = `<li><img src="{{img}}" alt="{{title}}"><a href="/recipe/{{id}}" data-navigo>{{title}}</a></li>`;
+const itemTemplate = `<li><img src="{{img}}" loading="lazy" alt="{{title}}"><a href="/recipe/{{id}}" data-navigo>{{title}}</a></li>`;
 
 function categoryComponent(category){
   renderComponent(`

@@ -23,7 +23,7 @@ function aboutComponent(){
   renderComponent(`
   <article>
     <section class="embedded-video">
-      <iframe src="https://www.youtube.com/embed/EKgwmMxh2g8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/EKgwmMxh2g8" title="YouTube video player" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </section>
     <section>
       <h2>About the site</h2>

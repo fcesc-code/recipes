@@ -16,7 +16,7 @@ function recipeComponent(id){
   const newUrl = images[`${id}_1`];
   renderComponent(`
     <li class="recipe" id="{{id}}">
-      <img class="img__detail" src={{imageUrl}} alt="{{name}}">
+      <img class="img__detail" src={{imageUrl}} loading="lazy" alt="{{name}}">
       <h2 class="recipe__title">{{name}}</h2>
       <div class="standard__flexrow">
         <h4><a class="inherit" href="{{categoryUrl}}" data-navigo>{{category}}</a></h4>
