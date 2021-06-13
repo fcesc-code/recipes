@@ -1,5 +1,5 @@
 import renderComponent from '../core/renderComponent';
-import SERVICE from '../services/SERVICE';
+import SERVICE from '../services/RECIPES_SERVICE';
 // eslint-disable-next-line
 import images from './../../assets/img/*.jpg';
 

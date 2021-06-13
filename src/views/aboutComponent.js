@@ -1,5 +1,5 @@
 import renderComponent from '../core/renderComponent';
-import SERVICE from '../services/SERVICE';
+import SERVICE from '../services/RECIPES_SERVICE';
 import CREDITS from '../mockdata/CREDITS_MEDIA';
 
 function listCooks(){
