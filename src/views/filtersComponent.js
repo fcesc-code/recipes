@@ -8,16 +8,14 @@ function categoriesList(){
   return categories.map( item => ({ 
     'category': item, 
     'url': `categories/${item.replace(/\s/g,'_').toLowerCase()}`,
-    'img': images[`cat_${item.replace(' ','_').toLowerCase()}_small`]
+    'img': images[`cat_${item.replace(' ','_').toLowerCase()}_small`],
+    'img_micro': images[`cat_${item.replace(' ','_').toLowerCase()}_micro`]
   }) );
 } 
 const categoryTemplate = `
   <li class="list__item">
     <div class="img__container">
-      <picture>
-        <source media="(min-width: 1535px)" srcset="{{img}}-large">
-        <img class="img__small" loading="lazy" src="{{img}}" alt="{{category}} recipes">
-      </picture>
+      <img class="img__small" loading="lazy" src="{{img}}" srcset="{{img_micro}}" sizes="auto" alt="{{category}} recipes">
     </div>
     <a href="{{url}}" data-navigo>{{category}}</a>
   </li>
@@ -28,16 +26,14 @@ function countriesList(){
   return countries.map( item => ({ 
     'country': item, 
     'url': `countries/${item.replace(/\s/g,'_').toLowerCase()}`,
-    'img': images[`ori_${item.replace(' ','_').toLowerCase()}_small`]
+    'img': images[`ori_${item.replace(' ','_').toLowerCase()}_small`],
+    'img_micro': images[`ori_${item.replace(' ','_').toLowerCase()}_micro`]
   }) )
 }
 const countryTemplate = `
   <li class="list__item">
     <div class="img__container">
-      <picture>
-        <source media="(min-width: 1535px)" srcset="{{img}}-large">
-        <img class="img__small" loading="lazy" src="{{img}}" alt="Tasty food from {{country}}">  
-      </picture>
+      <img class="img__small" loading="lazy" src="{{img}}" srcset="{{img_micro}}" sizes="auto" alt="Tasty food from {{country}}">  
     </div>
     <a href="{{url}}" data-navigo>{{country}}</a>
   </li>

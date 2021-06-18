@@ -14,9 +14,11 @@ const ingredientsTemplate = `<li>{{quantity}} {{name}}</li>`;
 function recipeComponent(id){
   const RECIPE = getRecipe(id);
   const newUrl = images[`${id}_1_small`];
+  const microUrl = images[`${id}_1_micro`];
+
   renderComponent(`
     <li class="recipe" id="{{id}}">
-      <img class="img__detail" src={{imageUrl}} loading="lazy" alt="{{name}}">
+      <img class="img__detail" src="{{imageUrl}}" loading="lazy" sizes="auto" srcset="{{imageMicro}} 240w" alt="{{name}}">
       <h2 class="recipe__title">{{name}}</h2>
       <div class="standard__flexrow">
         <h4><a class="inherit" href="{{categoryUrl}}" data-navigo>{{category}}</a></h4>
@@ -40,6 +42,7 @@ function recipeComponent(id){
     data: {
       id: RECIPE.id,
       imageUrl: newUrl,
+      imageMicro: microUrl,
       name: RECIPE.name.toUpperCase(),
       category: RECIPE.category,
       categoryUrl: `categories/${RECIPE.category.replace(/\s/g,'_').toLowerCase()}`,

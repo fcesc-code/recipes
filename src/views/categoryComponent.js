@@ -7,12 +7,17 @@ function neatList(category){
   const result = SERVICE.getRecipesByCategory(category).map(recipe => ({ 
     'title': recipe.name, 
     'img': images[`${recipe.id}_1_small`],
+    'img_micro': images[`${recipe.id}_1_micro`],
     'url': recipe.source,
     'id': recipe.id
   }));
   return result;
 }
-const itemTemplate = `<li><img src="{{img}}" loading="lazy" alt="{{title}}"><a href="/recipe/{{id}}" data-navigo>{{title}}</a></li>`;
+const itemTemplate = `
+  <li>
+    <img src="{{img}}" srcset="{{img_micro}} 240w" sizes="auto" loading="lazy" alt="{{title}}">
+    <a href="/recipe/{{id}}" data-navigo>{{title}}</a>
+  </li>`;
 
 function categoryComponent(category){
   renderComponent(`
