@@ -15,6 +15,7 @@ const neatList = DATA.map(recipe => ({
   'countryUrl': `countries/${recipe.country.replace(/\s/g,'_').toLowerCase()}`,
   'time': recipe.time,
   'img': images[`${recipe.id}_1_small`],
+  'img_micro': images[`${recipe.id}_1_micro`],
   'url': recipe.source,
   'id': recipe.id,
   'timerIcon': svgs.timer
@@ -23,7 +24,7 @@ const neatList = DATA.map(recipe => ({
 const itemTemplate = `
   <li>
     <div class="standard__flexcolumn  mosaic__item">
-      <img src="{{img}}" loading="lazy" alt="{{title}}">
+      <img src="{{img}}" srcset="{{img_micro}} 240w" sizes="auto" loading="lazy" alt="{{title}}">
       <div class="mosaic__card">
         <div class="standard__flexrow">
           <h4><a class="inherit" href="{{categoryUrl}}" data-navigo>{{category}}</a></h4>

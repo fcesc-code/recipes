@@ -9,7 +9,7 @@ import images from './../../assets/img/*.webp';
 function headerComponent(){
   renderComponent(`
     <div class="standard__flexrow--left" id="nav-top">
-      <img src="{{themeImg}}" class="img__theme" loading="lazy" alt="">
+      <img src="{{themeImg}}" class="img__theme" srcset="{{themeImg_micro}} 60w" sizes="auto" loading="lazy" alt="">
       <h1 class="mainTitle">RECIPES</h1>
     </div>
     <p class="mainSubtitle">{{emblem}}</p>
@@ -21,7 +21,9 @@ function headerComponent(){
     styles: '',
     data: {
       // eslint-disable-next-line
-      themeImg: images[`theme_small`],
+      themeImg: images[`theme_xsmall`],
+      // eslint-disable-next-line
+      themeImg_micro: images[`theme_micro`],
       emblem: 'Quick, romantic, healthy or delicious cooking? Find recipies for all your needs.',
       navMenu: {
         list: urlList,

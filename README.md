@@ -34,6 +34,7 @@ The app can be accessed via following links:
 - [ESLint](https://eslint.org/) for linting
 - [Prettier](https://prettier.io/) as code formatter
 - [PostCSS](https://www.npmjs.com/package/postcss)
+- [Magick](https://imagemagick.org/index.php) to resize and format images from shell / bash
 - Vanilla JS
 - HTML
 
