@@ -84,15 +84,21 @@ h1, h2
   @include wearablesAndPhones
     text-align: center
 
-h3, h4
+h3, h4, .subtitle
   color: $c_txt_subtitle
   padding-top: .9rem
+  font-size: 1em
+  text-transform: capitalize
 
 p
   padding: .25rem 0
 
 ul, ol
   padding: .3rem 0
+
+.center--mobile
+  @include wearablesAndPhones
+    text-align: center
 
 li
   list-style: none
