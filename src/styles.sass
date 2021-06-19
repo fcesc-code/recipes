@@ -91,9 +91,14 @@ a
 
 .mainSubtitle
   font-size: .9em
-  color: $c_theme_main
+  color: $c_bg_pinetree
   font-style: italic
-  margin: -.35rem 0 0 auto
+  @include fallback
+    margin: -.35rem 0 0 auto
+    text-align: right
+  @include allMobile
+    margin: .25rem 0 0 auto
+    text-align: center
 
 header
   display: flex
