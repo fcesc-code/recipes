@@ -79,6 +79,10 @@ h1, h2
   padding-top: 1.2rem
   text-transform: uppercase
   font-size: 1.2em
+  @include fallback
+    text-align: left
+  @include wearablesAndPhones
+    text-align: center
 
 h3, h4
   color: $c_txt_subtitle
@@ -114,7 +118,7 @@ a
     margin: -.35rem 0 0 auto
     text-align: right
   @include allMobile
-    margin: .25rem 0 0 auto
+    margin: .25rem 0 .5rem auto
     text-align: center
 
 header
