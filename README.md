@@ -40,7 +40,7 @@ The app can be accessed via following links:
 
 ## Quality gate
 - [HTML Validator](https://jigsaw.w3.org/css-validator/): 0 errors | 0 warnings \
-- [WAVE](https://wave.webaim.org/) accessibility validator: 0 errors | 1 contrast error | 1 alert \
+- [WAVE](https://wave.webaim.org/) accessibility validator: 0 errors | 1 alert \
 - [Jest](https://jestjs.io/): 15 tests passed \
 - [Sonarqube](https://www.sonarqube.org/): 0 bugs | 2 code smells | 0 vulnerabilities | 0 security hotspots | 0% code duplication \
 - [css validator](https://jigsaw.w3.org/css-validator/) used with the build css: 0 errors | 7 warnings (from autoprefixer code!)
