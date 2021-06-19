@@ -11,8 +11,10 @@
   color: $c_txt_main
   @include fallback
     font-size: $fsize_standard
-  @include wearablesAndPhones
+  @include wearables
     font-size: $fsize_extrasmall
+  @include phones
+    font-size: $fsize_small
   @include tablets
     font-size: $fsize_small
   @include hugeDevices
@@ -55,6 +57,21 @@ footer
     width: 100%
     top: 0
     left: 0
+
+.footer--flex
+  display: flex
+  @include fallback
+    flex-flow: row nowrap
+    justify-content: center
+  @include wearablesAndPhones
+    flex-flow: column nowrap
+    align-items: center
+
+.footer--hide
+  @include fallback
+    visibility: visible
+  @include wearablesAndPhones
+    display: none
 
 h1, h2
   color: $c_txt_title
@@ -220,13 +237,17 @@ nav
 
 .img__detail
   display: block
-  margin: 0 auto
-  width: 80%
   height: auto
+  @include fallback
+    width: 80%
+    margin: 0 auto
   @include wearables
     max-width: min(30rem, 100vw)
+    width: 97%
+    margin: .1rem auto
   @include phones
     max-width: min(30rem, 97vw)
+    width: 95%
   @include tablets
     max-width: min(30rem, 94vw)
   @include noHD
@@ -345,6 +366,10 @@ nav
   font-family: $fsans
   position: relative
   margin-top: 0
+  @include fallback
+    text-align: left
+  @include wearablesAndPhones
+    text-align: center
   &::after
     width: 100%
     position: absolute
@@ -393,6 +418,13 @@ nav
   margin: inherit
   border: inherit
   border-radius: inherit
+
+.inherit--text
+  font-size: inherit
+  font-family: inherit
+  font-style: inherit
+  font-weight: inherit
+  color: inherit
 
 .embedded-video
   position: relative
