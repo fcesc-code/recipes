@@ -26,14 +26,14 @@ function aboutComponent(){
       <iframe src="https://www.youtube.com/embed/EKgwmMxh2g8" title="YouTube video player" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </section>
     <section>
-      <h2>About the site</h2>
-      <h4>Why Gastronomy</h4>
+      <h1>About the site</h1>
+      <h2 class="subtitle">Why Gastronomy</h2>
       <p>
         Why another recipies site? Which is the same as asking: in which way is this site different?
         Very easy, we don't store cookies and bombard you with advertisments.
         The recipies are currently from mockdata from the web.
       </p>
-      <h4>Development status</h4>
+      <h2 class="subtitle">Development status</h2>
       <p>
         The gastro-app has presently a basic functionality: a limited list of recipes that can be filtered 
         with different criteria, with visual contents and basic <abbr title="cascade stylesheets">css</abbr> 
@@ -47,7 +47,7 @@ function aboutComponent(){
       <p>
         Ohter nice-to-have items for future development are: pagination, ordering and autosuggest search bar.
       </p>
-      <h4>Educational purposes</h4>
+      <h2 class="subtitle">Educational purposes</h2>
       <p>
         This project is an exercise doing for "HTML and CSS Tools 1" Subject, as part of the 
         <abbr title="Universitat Oberta de Catalunya"><a href="https://uoc.edu">UOC</a></abbr> Master in 
@@ -55,7 +55,7 @@ function aboutComponent(){
         Web app and sites development</a>. It has been developed between <time datetime="2021-03">March</time> 
         and <time datetime="2021-06">June 2021</time>.
       </p>
-      <h4>Open source</h4>
+      <h2 class="subtitle">Open source</h2>
       <p>
         The code for this project is open source and was developed for educational purposes. Luckily for the world,
         npm has not been cluttered with another dependency as a result. A repository of this project can be found 
@@ -76,7 +76,7 @@ function aboutComponent(){
         of having to acces them all the time with <code>element.property</code> syntax. Find examples in some 
         components in the Github <a href="https://github.com/fcesc-code/uoc-eines1-pac1">repository</a>.
       </p>
-      <h4>Development methodology</h4>
+      <h2 class="subtitle">Development methodology</h2>
       <p>
         The project has been developed using a 
         <abbr title="framework for developing, delivering, and sustaining complex products">SCRUM</abbr> 
@@ -95,7 +95,7 @@ function aboutComponent(){
       </p>
     </section>
     <section>
-      <h2>Tech stack</h2>
+      <h1>Tech stack</h1>
       <p>
         The application needed to be developed without any framework. Also, a boilerplate had to be created that
         could be reused in other web development projects. More on the tech-stack section.
@@ -106,27 +106,27 @@ function aboutComponent(){
         functions. Although with limited functionality, components can receive and dynamically render data, as
         well as unfold a list of data using a template (an Array of Objects is required).
       </p>
-      <h4>This website has been developed using following tech stack:</h4>
-      <ul>
+      <h2 class="subtitle">This website has been developed using following tech stack:</h2>
+      <ul class="center--mobile">
         <li><a href="https://parceljs.org">Parcel</a></li>
-        <li><a href="https://babeljs.io/">Babel</li>
+        <li><a href="https://babeljs.io/">Babel</a></li>
         <li><a href="https://www.netlify.com/">Netlify</a><li>
         <li><a href="https://firebase.google.com/">Firebase</a><li>
-        <li><a href="https://jestjs.io/">Jest</li>
-        <li><a href="https://sass-lang.com/">Sass</li>
-        <li><a href="https://www.sonarqube.org/">Sonarqube</li>
-        <li><a href="https://code.visualstudio.com/">VSCode</li>
-        <li><a href="https://github.com/">Github</li>
-        <li><a href="https://github.com/axios/axios">Axios</li>
-        <li><a href="https://eslint.org/">Eslint</li>
-        <li><a href="https://prettier.io/">Prettier</li>
-        <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Introduction">Vanilla JS</li>
+        <li><a href="https://jestjs.io/">Jest</a></li>
+        <li><a href="https://sass-lang.com/">Sass</a></li>
+        <li><a href="https://www.sonarqube.org/">Sonarqube</a></li>
+        <li><a href="https://code.visualstudio.com/">VSCode</a></li>
+        <li><a href="https://github.com/">Github</a></li>
+        <li><a href="https://github.com/axios/axios">Axios</a></li>
+        <li><a href="https://eslint.org/">Eslint</a></li>
+        <li><a href="https://prettier.io/">Prettier</a></li>
+        <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Introduction">Vanilla JS</a></li>
         <li><a href="https://expressjs.com">Express</a></li>
         <li><a href="https://github.com/krasimir/navigo">Navigo</a></li>
         <li><a href="https://imagemagick.org/index.php">Image Magick</a></li>
       </ul>
-      <h4>Following pages were used as ressources, inspiration or knowledge base for this page:</h4>
-      <ul>
+      <h2 class="subtitle">Following pages were used as ressources, inspiration or knowledge base for this page:</h2>
+      <ul class="center--mobile">
         <li><a href="https://www.pexels.com">Pexels</a></li>
         <li><a href="https://unsplash.com">Unsplash</a></li>
         <li><a href="https://uxwing.com/">Uxwing</a></li>
@@ -137,19 +137,19 @@ function aboutComponent(){
       </ul>
     </section>
     <section>
-      <h2>Credits</h2>
-      <h4>Recipes were inspired in these sites:</h4>
-      <ul>{{%%sources%%}}</ul>
-      <h4>For the author recipes, credits to:</h4>
-      <ul>{{%%cooks%%}}</ul>
-      <h4>For the photographs, credits to:</h4>
-      <ul>{{%%photographers%%}}</ul>
-      <h4>Assistant professor</h4>
-      <p>Xavier Julián Olmos</p>
+      <h1>Credits</h1>
+      <h2 class="subtitle">Recipes were inspired in these sites:</h2>
+      <ul class="center--mobile">{{%%sources%%}}</ul>
+      <h2 class="subtitle">For the author recipes, credits to:</h2>
+      <ul class="center--mobile">{{%%cooks%%}}</ul>
+      <h2 class="subtitle">For the photographs, credits to:</h2>
+      <ul class="center--mobile">{{%%photographers%%}}</ul>
+      <h2 class="subtitle">Assistant professor</h2>
+      <p class="center--mobile">Xavier Julián Olmos</p>
     </section>
     <section>
-      <h2>About the author</h2>
-      <p>Find more information about the author on <a href="https://github.com/fcesc-code/">Github</a> 
+      <h1>About the author</h1>
+      <p class="center-mobile">Find more information about the author on <a href="https://github.com/fcesc-code/">Github</a> 
       or <a href="https://linkedin.com/in/francescbrugarolas/">LinkedIn</a>.</p>
     </section>
   </article>

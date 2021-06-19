@@ -19,7 +19,7 @@ function recipeComponent(id){
   renderComponent(`
     <li class="recipe" id="{{id}}">
       <img class="img__detail" src="{{imageUrl}}" loading="lazy" sizes="auto" srcset="{{imageMicro}} 240w" alt="{{name}}">
-      <h2 class="recipe__title">{{name}}</h2>
+      <h1 class="recipe__title">{{name}}</h1>
       <div class="standard__flexrow">
         <h4><a class="inherit" href="{{categoryUrl}}" data-navigo>{{category}}</a></h4>
         <p class="text__secondary">{{time}} min </p>

@@ -8,11 +8,11 @@ import images from './../../assets/img/*.webp';
 
 function headerComponent(){
   renderComponent(`
-    <div class="standard__flexrow--left" id="nav-top">
+    <div class="standard__flexrow--header" id="nav-top">
       <img src="{{themeImg}}" class="img__theme" srcset="{{themeImg_micro}} 60w" sizes="auto" loading="lazy" alt="">
       <h1 class="mainTitle">RECIPES</h1>
+      <p class="mainSubtitle">{{emblem}}</p>
     </div>
-    <p class="mainSubtitle">{{emblem}}</p>
     <nav>
       <ul class="navMenu">{{%%navMenu%%}}</ul>
     </nav>

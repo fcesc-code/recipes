@@ -42,11 +42,11 @@ const countryTemplate = `
 function filtersComponent(){
   renderComponent(`
     <section id="filters">
-      <h3>Categories</h3>
+      <h1>Categories</h1>
       <ul class="categories recipies">
         {{%%listOfCategories%%}}
       </ul>
-      <h3>Origin</h3>
+      <h1>Origin</h1>
       <ul class="categories recipies">
         {{%%listOfCountries%%}}
       </ul>
