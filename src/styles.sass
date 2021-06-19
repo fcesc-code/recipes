@@ -171,6 +171,14 @@ nav
     width: 100%
     top: 0
     left: 0
+  &::after
+    content: ''
+    background-color: $c_theme_main
+    position: absolute
+    height: 1px
+    width: 100%
+    top: 100%
+    left: 0
 
 .navMenu
   display: flex
@@ -179,31 +187,34 @@ nav
     flex-direction: row
     justify-content: center
     align-items: center
-  @include wearables
-    flex-direction: column
-    justify-content: flex-start
-    align-items: center
   & > li
     display: inline-block
     list-style: none
-    min-width: 10rem
-    color: $c_theme_main
-    border-radius: .25rem
-    margin: .25rem 1rem .05rem 0
-    padding: 0 .25rem
     text-align: center
+    border-radius: .25rem
+    @include fallback
+      color: $c_theme_main
+      margin: .25rem 1rem .05rem 0
+      padding: 0 .25rem
+      min-width: 10rem
+    @include wearablesAndPhones
+      margin: .3rem .75rem .3rem .75rem
+      padding: .1rem .25rem
+      min-width: 40vw
+      font-size: $fsize_standard
     & a
       color: $c_txt_subtitle
       font-weight: bold
       position: relative
       &::after
-        content: ''
-        height: 1px
-        width: 120%
-        background: $c_txt_secondary
-        position: absolute
-        top: 100%
-        left: -10%
+        @include mostPc
+          content: ''
+          height: 1px
+          width: 120%
+          background: $c_txt_secondary
+          position: absolute
+          top: 100%
+          left: -10%
       &:hover
         text-decoration: none
 
@@ -271,7 +282,7 @@ nav
   justify-content: space-between
   align-items: center
   width: 100%
-  & p, h2, h3, h4
+  & p, h1, h2, h3, h4, h5, h6
     padding: 0
 
 .standard__flexrow--left
@@ -280,8 +291,22 @@ nav
   justify-content: flex-start
   align-items: center
   width: 100%
+  & p, h1, h2, h3, h4, h5, h6
+    padding: 0
+
+.standard__flexrow--header
+  display: flex
+  width: 100%
   & p, h2, h3, h4
     padding: 0
+  @include fallback
+    flex-flow: row wrap
+    justify-content: flex-start
+    align-items: center
+  @include allMobile
+    flex-flow: column nowrap
+    justify-content: flex-start
+    align-items: center
 
 .text__secondary
   color: $c_txt_secondary
@@ -344,10 +369,18 @@ nav
 
 .flexcontainer__left
   flex-grow: 1
-  min-width: 15rem
+  @include fallback
+    min-width: 15rem
+  @include wearablesAndPhones
+    min-width: 85vw
+    width: 90%
 
 .flexcontainer__right
-  flex-grow: 3
+  @include fallback
+    flex-grow: 3
+  @include wearablesAndPhones
+    flex-grow: 1
+    width: 90%
 
 .inherit
   font-size: inherit
