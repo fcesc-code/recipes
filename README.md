@@ -1,12 +1,14 @@
 
 ## Purpose
-The aim of this PEC1 is to create a small site and a boilerplate for other projects, as part of a University 
+The main goal of this project is to create a small site using a custom boilerplate, and avoiding to use front-end frameworks.
+A tiny parser has been created to allow a SPA run in vanilla JS. It is, at least still, not yet another complete JS framework and the aim is not to clutter the internet with endless packages but to learn coding - mainly for fun.
+This activity is part of the University 
 [Web apps and sites development Master](https://estudis.uoc.edu/ca/masters-universitaris/desenvolupament-llocs-aplicacions-web/presentacio) 
 by [Universitat Oberta de Catalunya](http://uoc.edu). \
 Subject: HTML and CSS tools I. April 2021.
 
 ## Repo
-A Git repository can be found at https://github.com/fcesc-code/uoc-eines1-pac1.git
+A Git repository can be found at https://github.com/fcesc-code/recipes.git
 Deploy status: [![Netlify Status](https://api.netlify.com/api/v1/badges/d97436fc-1621-4de1-b33c-f2c5567205de/deploy-status)](https://app.netlify.com/sites/gastro/deploys)
 
 ## Public web
@@ -52,6 +54,8 @@ Assistant professor Xavier Julián Olmos.
 Wherever appropriate, credit is given to author as a comment in specific file.
 
 ## Author
-Francesc Brugarolas, [VanillaJS repo](https://github.com/fcesc-code/vanillaJS)\
+Since I am still a junior developer, I appreciate any given relevant feedback :smiley:. 
+[Francesc Brugarolas](https://linkedin.com/in/francescbrugarolas), [VanillaJS repo](https://github.com/fcesc-code/vanillaJS)\
 \
-Latest update: June 2021
+June 2021
+Latest update: August 2021.
