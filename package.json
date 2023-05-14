@@ -49,7 +49,7 @@
     "prettier": "^2.8.8",
     "regenerator-runtime": "^0.13.7",
     "rimraf": "^5.0.0",
-    "sass": "^1.32.13"
+    "sass": "^1.62.1"
   },
   "dependencies": {
     "axios": "^0.21.2",
