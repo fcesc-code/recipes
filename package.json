@@ -32,7 +32,7 @@
     "@babel/cli": "^7.21.5",
     "@babel/core": "^7.21.5",
     "@babel/node": "^7.20.7",
-    "@babel/plugin-transform-runtime": "^7.14.2",
+    "@babel/plugin-transform-runtime": "^7.21.4",
     "@babel/preset-env": "^7.21.5",
     "autoprefixer": "^9.8.6",
     "deasync": "^0.1.28",
